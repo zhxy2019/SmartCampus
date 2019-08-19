@@ -43,15 +43,11 @@
         <!--<table tableName="user" domainObjectName="User"></table>-->
         <!--<table tableName="counselor" domainObjectName="Counselor">-->
         <!--</table>-->
-        <!--<table tableName="course" domainObjectName="Course">-->
-        <!--</table>-->
-        <!--<table tableName="student" domainObjectName="Student">-->
-        <!--</table>-->
-        <!--<table tableName="student_course" domainObjectName="StudentCourse">-->
-        <!--</table>-->
-        <!--<table tableName="studentanalysis" domainObjectName="StudentAnalysis">-->
-        <!--</table>-->
-
+        <!--<table tableName="course" domainObjectName="Course"></table>-->
+        <table tableName="student" domainObjectName="Student"></table>
+        <!--<table tableName="student_course" domainObjectName="StudentCourse"></table>-->
+        <!--<table tableName="studentstudy" domainObjectName="StudentStudy"></table>-->
+        <!--<table tableName="studentbehavior" domainObjectName="StudentBehavior"></table>-->
         <!--<table tableName="collegeanalysis" domainObjectName="CollegeAnalysis"></table>-->
         <!--<table tableName="predictScore" domainObjectName="PredictScore"></table>-->
     </context>
