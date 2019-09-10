@@ -27,4 +27,12 @@ public interface StudentMapper {
     int updateByPrimaryKeySelective(Student record);
 
     int updateByPrimaryKey(Student record);
+
+    List<Integer> countStudentByGrind(@Param("grind") Integer grind);
+    Integer sumStudentByGrind(@Param("grind") Integer grind);
+
+    //    Map<Integer,Integer> countFailByGrade(@Param("grade") Integer grade);
+    List<Integer> countFailByGrade(@Param("grade") Integer grade);
+    Integer sumStudentByFail(@Param("fail") Integer fail);
+
 }

@@ -75,14 +75,14 @@
             <!-- sidebar menu start-->
             <ul class="sidebar-menu" id="nav-accordion">
                 <li>
-                    <a href="index.html">
+                    <a href="main">
                         <i class="icon-bar-chart"></i>
                         <span>成绩分析</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="javascript:;">
+                    <a href="study/">
                         <i class="icon-book"></i>
                         <span>学业画像</span>
                     </a>

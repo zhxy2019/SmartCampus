@@ -27,4 +27,8 @@ public interface StudentStudyMapper {
     int updateByPrimaryKeySelective(StudentStudy record);
 
     int updateByPrimaryKey(StudentStudy record);
+
+
+    List<Integer> countAscendByYear(@Param("year") String year);
+    Integer sumStudentByAscend(@Param("ascend") Integer ascend);
 }

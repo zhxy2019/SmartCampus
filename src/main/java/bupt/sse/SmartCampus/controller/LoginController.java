@@ -122,14 +122,14 @@ public class LoginController {
         return "adminMain";
     }
 //
-//    @RequestMapping("/logout")
-//    public String logout(HttpSession session, SessionStatus sessionStatus){
-//        //通过session.invalidate方法注销当前session
-//        session.removeAttribute("user");
-//        session.invalidate();
-//        sessionStatus.setComplete();
-//        return "redirect:/";
-//    }
+    @RequestMapping("/logout")
+    public String logout(HttpSession session, SessionStatus sessionStatus){
+        //通过session.invalidate方法注销当前session
+        session.removeAttribute("user");
+        session.invalidate();
+        sessionStatus.setComplete();
+        return "redirect:/";
+    }
 //
     /*
     获取验证码
