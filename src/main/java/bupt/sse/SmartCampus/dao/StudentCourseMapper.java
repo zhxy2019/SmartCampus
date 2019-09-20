@@ -4,6 +4,8 @@ import bupt.sse.SmartCampus.model.StudentCourse;
 import bupt.sse.SmartCampus.model.StudentCourseExample;
 import bupt.sse.SmartCampus.model.StudentCourseKey;
 import java.util.List;
+import java.util.Map;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface StudentCourseMapper {
@@ -28,4 +30,8 @@ public interface StudentCourseMapper {
     int updateByPrimaryKeySelective(StudentCourse record);
 
     int updateByPrimaryKey(StudentCourse record);
+
+//    List<StudentCourse> getStudentCourseDataByStudentId(@Param("studentId")Integer studentId,@Param("year")String year);
+
+    List<Map> getCourseDataByStudentId(@Param("studentId")String studentId, @Param("year")String year);
 }
