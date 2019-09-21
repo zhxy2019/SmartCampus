@@ -10,86 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4617262f-5f0e-45cd-a7cf-7f20f9e104d2" name="Default Changelist" comment="初始框架，完成登录功能，userID 20152120442 userPassword 123456&#10;类名用大驼峰 变量用小驼峰&#10;所有jsp放在WEB-INF/views下面&#10;每人分配一个Controller以减少冲突，曹锡鹏ScorePredictController 对应成绩分析功能&#10;来佳洁 StudyProfileController 对应学业画像展示&#10;于瑞杰 ConsumptionProfileController 对应消费画像展示">
-      <change afterPath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/AdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/service/PredictScoreService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/service/PredictScoreServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/datatables/css/dataTables.bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/datatables/css/dataTables.bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/datatables/css/dataTables.bootstrap4.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/datatables/css/dataTables.bootstrap4.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/datatables/css/dataTables.foundation.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/datatables/css/dataTables.foundation.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/datatables/css/dataTables.jqueryui.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/datatables/css/dataTables.jqueryui.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/datatables/css/dataTables.material.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/datatables/css/dataTables.material.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/datatables/css/dataTables.semanticui.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/datatables/css/dataTables.semanticui.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/datatables/css/dataTables.uikit.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/datatables/css/dataTables.uikit.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/datatables/css/jquery.dataTables.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/datatables/css/jquery.dataTables.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/datatables/css/jquery.dataTables_themeroller.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/datatables/images/Sorting icons.psd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/datatables/images/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/datatables/images/sort_asc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/datatables/images/sort_asc_disabled.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/datatables/images/sort_both.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/datatables/images/sort_desc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/datatables/images/sort_desc_disabled.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/datatables/js/dataTables.bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/datatables/js/dataTables.bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/datatables/js/dataTables.bootstrap4.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/datatables/js/dataTables.bootstrap4.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/datatables/js/dataTables.foundation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/datatables/js/dataTables.foundation.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/datatables/js/dataTables.jqueryui.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/datatables/js/dataTables.jqueryui.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/datatables/js/dataTables.material.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/datatables/js/dataTables.material.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/datatables/js/dataTables.semanticui.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/datatables/js/dataTables.semanticui.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/datatables/js/dataTables.uikit.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/datatables/js/dataTables.uikit.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/datatables/js/jquery.dataTables.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/datatables/js/jquery.dataTables.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/datatables/js/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/echarts/echarts-en.common.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/echarts/echarts-en.common.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/echarts/echarts-en.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/echarts/echarts-en.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/echarts/echarts-en.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/echarts/echarts-en.simple.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/echarts/echarts-en.simple.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/echarts/echarts.common.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/echarts/echarts.common.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/echarts/echarts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/echarts/echarts.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/echarts/echarts.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/echarts/echarts.simple.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/echarts/echarts.simple.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/echarts/extension/bmap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/echarts/extension/bmap.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/echarts/extension/bmap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/echarts/extension/dataTool.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/echarts/extension/dataTool.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/echarts/extension/dataTool.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/CounselorController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmartCampus.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SmartCampus.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/dao/PredictScoreMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/dao/PredictScoreMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/dao/StudentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/dao/StudentMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/interceptor/LoginInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/interceptor/LoginInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/model/PredictScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/model/PredictScore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/model/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/model/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/service/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/service/StudentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/service/StudentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/service/StudentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/PredictScoreMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/PredictScoreMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/StudentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/StudentMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/adminMain.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/adminMain.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/common-scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/common-scripts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/count.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/count.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/SmartCampus/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/SmartCampus/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/HTML/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/HTML/404.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/HTML/500.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/HTML/500.html" afterDir="false" />
@@ -1618,8 +1540,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/AdminController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1290">
-              <caret line="49" column="46" lean-forward="true" selection-start-line="49" selection-start-column="46" selection-end-line="49" selection-end-column="46" />
+            <state relative-caret-position="300">
+              <caret line="49" column="21" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/CounselorController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="7" column="34" lean-forward="true" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1639,7 +1573,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/interceptor/LoginInterceptor.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="462">
@@ -1660,20 +1594,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="121" column="46" selection-start-line="121" selection-start-column="46" selection-end-line="121" selection-end-column="46" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/service/PredictScoreService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+            <state relative-caret-position="198">
+              <caret line="62" column="46" lean-forward="true" selection-start-line="62" selection-start-column="41" selection-end-line="62" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1770,6 +1692,7 @@
         <option value="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/LoginController.java" />
         <option value="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/interceptor/LoginInterceptor.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/adminMain.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/CounselorController.java" />
       </list>
     </option>
   </component>
@@ -2070,7 +1993,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1569050463914" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1569050505178" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -2248,7 +2171,7 @@
       <workItem from="1568778347470" duration="8289000" />
       <workItem from="1568871038909" duration="24815000" />
       <workItem from="1568939036588" duration="3328000" />
-      <workItem from="1568970242834" duration="30084000" />
+      <workItem from="1568970242834" duration="30730000" />
     </task>
     <task id="LOCAL-00001" summary="初始框架，完成登录功能，userID 20152120442 userPassword 123456&#10;类名用大驼峰 变量用小驼峰&#10;所有jsp放在WEB-INF/views下面&#10;每人分配一个Controller以减少冲突，曹锡鹏ScorePredictController 对应成绩分析功能&#10;来佳洁 StudyProfileController 对应学业画像展示&#10;于瑞杰 ConsumptionProfileController 对应消费画像展示">
       <created>1565278126087</created>
@@ -2257,11 +2180,18 @@
       <option name="project" value="LOCAL" />
       <updated>1565278126087</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="合并ljj1.0，增加学生挂科预测查询、注销">
+      <created>1569050957539</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1569050957539</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97941000" />
+    <option name="totallyTimeSpent" value="98587000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2274,8 +2204,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="2728" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4984326" visible="true" weight="0.20255864" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4984326" visible="true" weight="0.20255864" />
       <window_info id="Structure" order="1" sideWeight="0.5015674" side_tool="true" weight="0.15496911" />
       <window_info id="Designer" order="2" />
       <window_info id="JRebel" order="3" sideWeight="0.5015674" side_tool="true" weight="0.15496911" />
@@ -2289,7 +2220,7 @@
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="Find" order="3" />
       <window_info anchor="bottom" id="Run" order="4" sideWeight="0.49859628" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Debug" order="5" sideWeight="0.8176972" visible="true" weight="0.29501083" />
+      <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.8176972" visible="true" weight="0.29501083" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
       <window_info anchor="bottom" id="JRebel Console" order="8" sideWeight="0.5021322" weight="0.39804772" />
@@ -2319,7 +2250,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="初始框架，完成登录功能，userID 20152120442 userPassword 123456&#10;类名用大驼峰 变量用小驼峰&#10;所有jsp放在WEB-INF/views下面&#10;每人分配一个Controller以减少冲突，曹锡鹏ScorePredictController 对应成绩分析功能&#10;来佳洁 StudyProfileController 对应学业画像展示&#10;于瑞杰 ConsumptionProfileController 对应消费画像展示" />
-    <option name="LAST_COMMIT_MESSAGE" value="初始框架，完成登录功能，userID 20152120442 userPassword 123456&#10;类名用大驼峰 变量用小驼峰&#10;所有jsp放在WEB-INF/views下面&#10;每人分配一个Controller以减少冲突，曹锡鹏ScorePredictController 对应成绩分析功能&#10;来佳洁 StudyProfileController 对应学业画像展示&#10;于瑞杰 ConsumptionProfileController 对应消费画像展示" />
+    <MESSAGE value="合并ljj1.0，增加学生挂科预测查询、注销" />
+    <option name="LAST_COMMIT_MESSAGE" value="合并ljj1.0，增加学生挂科预测查询、注销" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2346,13 +2278,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="129" column="21" lean-forward="true" selection-start-line="129" selection-start-column="21" selection-end-line="129" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/service/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -2701,30 +2626,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="121" column="46" selection-start-line="121" selection-start-column="46" selection-end-line="121" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/AdminController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1290">
-          <caret line="49" column="46" lean-forward="true" selection-start-line="49" selection-start-column="46" selection-end-line="49" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/adminMain.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="67" column="25" lean-forward="true" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/interceptor/LoginInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
@@ -2738,10 +2650,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/interceptor/LoginInterceptor.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="198">
+          <caret line="62" column="46" lean-forward="true" selection-start-line="62" selection-start-column="41" selection-end-line="62" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/AdminController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="49" column="21" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/CounselorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="7" column="34" lean-forward="true" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
