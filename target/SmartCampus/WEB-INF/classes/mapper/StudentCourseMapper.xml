@@ -335,4 +335,18 @@
       and term = #{term,jdbcType=INTEGER}
       and studentId = #{studentid,jdbcType=VARCHAR}
   </update>
+  <!--<select id="getStudentCourseDataByStudentId" resultType="bupt.sse.SmartCampus.model.StudentCourse">-->
+    <!--select * from student_course-->
+    <!--where studentId=#{studentId,jdbcType=INTEGER}-->
+    <!--and year=#{year,jdbcType=VARCHAR}-->
+    <!--order by term;-->
+  <!--</select>-->
+
+  <select id="getCourseDataByStudentId" resultType="java.util.Map">
+    select * from student_course sc,course c where sc.courseId=c.courseId
+    and sc.studentId=#{studentId,jdbcType=VARCHAR}
+    and sc.year=#{year,jdbcType=VARCHAR}
+    order by term;
+  </select>
+  
 </mapper>

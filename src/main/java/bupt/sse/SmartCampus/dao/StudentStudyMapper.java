@@ -3,6 +3,8 @@ package bupt.sse.SmartCampus.dao;
 import bupt.sse.SmartCampus.model.StudentStudy;
 import bupt.sse.SmartCampus.model.StudentStudyExample;
 import java.util.List;
+import java.util.Map;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface StudentStudyMapper {
@@ -29,6 +31,17 @@ public interface StudentStudyMapper {
     int updateByPrimaryKey(StudentStudy record);
 
 
-    List<Integer> countAscendByYear(@Param("year") String year);
+    //graph所需数据
+    List<Map> countAscend();
+    List<Map> countAscendById(@Param("id") String id);
+    Map sumAscend();
+    Map sumAscendById(@Param("id") String id);
     Integer sumStudentByAscend(@Param("ascend") Integer ascend);
+
+    //datatable所需totalrecords
+    Integer sumStudentByAscendAndYear(@Param("ascend") Integer ascend,@Param("year") String year);
+    Integer sumStudentByAscendAndYearAndId(@Param("ascend") Integer ascend,@Param("year") String year,@Param("id") String id);
+
+
+    List<StudentStudy> getStudentStudyDataByStudentId(@Param("studentId") String studentId);
 }

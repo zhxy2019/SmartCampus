@@ -241,15 +241,73 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
 
-  <select id="countAscendByYear" resultType="java.lang.Integer">
-    select count(*) from (
-    select * from scoreanalysis.studentstudy
-    where year = #{year,jdbcType=VARCHAR}) ss
-    group by ascend;
+
+  <select id="countAscend" resultType="java.util.Map">
+    select year,
+    count(if(ascend=0,true,null)) as ascend0,
+    count(if(ascend=1,true,null)) as ascend1,
+    count(if(ascend=2,true,null)) as ascend2
+    from scoreanalysis.studentstudy
+    where year>=2006
+    group by year;
   </select>
-  <select id="sumStudentByAscend" resultType="java.lang.Integer">
-    select count(*) from scoreanalysis.studentstudy
+  <select id="countAscendById" resultType="java.util.Map">
+    select ss.year,
+    count(if(ss.ascend=0,true,null)) as ascend0,
+    count(if(ss.ascend=1,true,null)) as ascend1,
+    count(if(ss.ascend=2,true,null)) as ascend2
+    from scoreanalysis.studentstudy ss , scoreanalysis.class c ,scoreanalysis.student s
+    where s.classId=c.classId and s.studentId=ss.studentId
+    and (c.collegeId=#{id,jdbcType=VARCHAR} or c.majorId=#{id,jdbcType=VARCHAR})
+    and ss.year>=2006
+    group by ss.year;
+  </select>
+  <select id="sumAscend" resultType="java.util.Map">
+    select
+    count(if(ascend=0,true,null)) as ascend0,
+    count(if(ascend=1,true,null)) as ascend1,
+    count(if(ascend=2,true,null)) as ascend2
+    from scoreanalysis.studentstudy
+    where year>=2006;
+  </select>
+  <select id="sumAscendById" resultType="java.util.Map">
+    select
+    count(if(ss.ascend=0,true,null)) as ascend0,
+    count(if(ss.ascend=1,true,null)) as ascend1,
+    count(if(ss.ascend=2,true,null)) as ascend2
+    from scoreanalysis.studentstudy ss , scoreanalysis.class c ,scoreanalysis.student s
+    where s.classId=c.classId and s.studentId=ss.studentId
+    and (c.collegeId=#{id,jdbcType=VARCHAR} or c.majorId=#{id,jdbcType=VARCHAR})
+    and ss.year>=2006;
+  </select>
+  <select id="sumStudentByAscend" resultType="java.util.Map">
+    select count(*) from (
+    select distinct studentId,ascend from scoreanalysis.studentstudy) ass
     where ascend = #{ascend,jdbcType=INTEGER};
   </select>
 
+
+
+  <select id="sumStudentByAscendAndYear" resultType="java.lang.Integer">
+    select count(*)
+    from scoreanalysis.studentstudy as ss ,scoreanalysis.student as s
+    where s.studentId=ss.studentId
+    and ss.year like #{year,jdbcType=VARCHAR}
+    and ss.ascend = #{ascend,jdbcType=INTEGER};
+  </select>
+    <select id="sumStudentByAscendAndYearAndId" resultType="java.lang.Integer">
+    select count(*)
+    from scoreanalysis.studentstudy as ss , scoreanalysis.class as c ,scoreanalysis.student as s
+    where s.classId=c.classId and s.studentId=ss.studentId
+    and ss.year like #{year,jdbcType=VARCHAR}
+    and ss.ascend = #{ascend,jdbcType=INTEGER}
+    and (c.collegeId=#{id,jdbcType=VARCHAR} or c.majorId=#{id,jdbcType=VARCHAR});
+  </select>
+
+
+
+  <select id="getStudentStudyDataByStudentId" resultType="bupt.sse.SmartCampus.model.StudentStudy">
+    select * from scoreanalysis.studentstudy
+    where studentId=#{studentId,jdbcType=VARCHAR};
+  </select>
 </mapper>

@@ -6,15 +6,21 @@ import java.util.List;
 import java.util.Map;
 
 public interface StudentService {
-    List<Integer> getStudentNumByGrind(Integer grind);
-    Integer getStudentSumByGrind(Integer grind);
+    Integer fizzySearchSum(String collegeName,String majorName,String grade,String studentId,String studentName,Integer pageNum,Integer pageSize);
+    List<Map> fizzySearchData(String collegeName,String majorName,String grade,String studentId,String studentName,Integer pageNum,Integer pageSize);
 
-    //    Map<Integer,Integer> getFailNumByGrade(Integer grade);
-    List<Integer> getFailNumByGrade(Integer grade);
-    Integer getStudentSumByFail(Integer fail);
+    Integer getStudentSumByLabelAndGradeAndId(String Label,String grade,String id);
 
-    List<Integer> getAscendNumByYear(String year);
-    Integer getStudentSumByAscend(Integer ascend);
+    List<Student> getStudentPageDataByLabelAndGradeAndId(String label,String grade,String id,Integer pageNum,Integer pageSize);
+
+    List<Map> getCountDataByLabelAndId(String label,String id);
+    Map getSumDataByLabelAndId(String label,String id);
+
+
+    Student getStudentDataByStudentId(String studentId);
+
+    //辅助函数
+    Integer getIndex(String label);
 
     long getStudentSumInSchool(int currentGrade);
 

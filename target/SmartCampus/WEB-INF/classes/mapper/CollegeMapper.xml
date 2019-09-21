@@ -193,4 +193,17 @@
     where collegeId = #{collegeid,jdbcType=VARCHAR}
       and majorId = #{majorid,jdbcType=VARCHAR}
   </update>
+
+  <select id="getAllCollegeIdAndName" resultType="java.util.Map">
+    select distinct collegeId,collegeName from college;
+  </select>
+  <select id="getMajorIdAndNameByCollegeId" resultType="java.util.Map">
+    select distinct majorId,majorName from college where collegeId=#{collegeId,jdbcType=VARCHAR};
+  </select>
+  <select id="selectCollegeDataByStudentId" resultType="bupt.sse.SmartCampus.model.College">
+    select co.*
+    from student as s,class as cl,college as co
+    where s.classId=cl.classId and cl.majorId=co.majorId
+    and s.studentId=#{studentId,jdbcType=VARCHAR};
+  </select>
 </mapper>

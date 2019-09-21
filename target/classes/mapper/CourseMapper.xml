@@ -208,4 +208,16 @@
       classHour = #{classhour,jdbcType=VARCHAR}
     where courseId = #{courseid,jdbcType=VARCHAR}
   </update>
+
+  <!--<select id="getCourseDataByClassId" resultType="bupt.sse.SmartCampus.model.Course">-->
+    <!--select * from scoreanalysis.course-->
+    <!--<where>-->
+      <!--<if test="list!= null and list.size() > 0">-->
+        <!--courseId IN-->
+        <!--<foreach collection="list" item="item" index="index" open="(" separator="," close=")">-->
+          <!--#{item}-->
+        <!--</foreach>-->
+      <!--</if>-->
+    <!--</where>-->
+  <!--</select>-->
 </mapper>
