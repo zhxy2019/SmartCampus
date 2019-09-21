@@ -21,6 +21,7 @@ import java.util.Map;
 import java.util.Set;
 
 @Controller
+@RequestMapping("/study")
 public class StudyProfileController {
     @Autowired
     private StudentService studentService;
@@ -31,10 +32,26 @@ public class StudyProfileController {
     @Autowired
     private CollegeService collegeService;
 
+    @RequestMapping("/")
+    public String index(HttpSession session){
+        User user= (User) session.getAttribute("user");
+        if(user!=null){
+            //已经登录,跳转到学业画像页面
+            return "studyProfile";
+        }
+        return "login";
+    }
 
-
-    public Message searchStudent(HttpSession session,String collegeName, String majorName,String grade,String studentId,
-                                 String studentName,Integer pageNum,Integer draw) {
+    @RequestMapping("/searchStudent")
+    @ResponseBody
+    public Message searchStudent(HttpSession session,
+                                 @RequestParam(value ="collegeName", required = false) String collegeName,
+                                 @RequestParam(value ="majorName", required = false) String majorName,
+                                 @RequestParam(value ="grade", required = false) String grade,
+                                 @RequestParam(value ="studentId", required = false) String studentId,
+                                 @RequestParam(value ="studentName", required = false) String studentName,
+                                 @RequestParam(value = "pageNum", required = false)Integer pageNum,
+                                 @RequestParam(value = "draw", required = false)Integer draw) {
         System.out.println("====================searchStudent" + grade + studentId + studentName + "=======================");
         System.out.println(collegeName);
         System.out.println(majorName);

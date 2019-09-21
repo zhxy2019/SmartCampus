@@ -6,16 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4617262f-5f0e-45cd-a7cf-7f20f9e104d2" name="Default Changelist" comment="初始框架，完成登录功能，userID 20152120442 userPassword 123456&#10;类名用大驼峰 变量用小驼峰&#10;所有jsp放在WEB-INF/views下面&#10;每人分配一个Controller以减少冲突，曹锡鹏ScorePredictController 对应成绩分析功能&#10;来佳洁 StudyProfileController 对应学业画像展示&#10;于瑞杰 ConsumptionProfileController 对应消费画像展示">
-      <change afterPath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/service/CounselorService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/service/CounselorServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/counselorMain.jsp" afterDir="false" />
+    <list default="true" id="4617262f-5f0e-45cd-a7cf-7f20f9e104d2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/generatorConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/CounselorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/CounselorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/StudyProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/StudyProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/service/StudentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/service/StudentServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/SmartCampus/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/SmartCampus/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/HTML/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/HTML/404.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/HTML/500.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/HTML/500.html" afterDir="false" />
@@ -63,6 +56,7 @@
       <change beforePath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/HTML/xchart.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/HTML/xchart.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/classes/META-INF/SmartCampus.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/classes/bupt/sse/SmartCampus/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/classes/bupt/sse/SmartCampus/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/classes/bupt/sse/SmartCampus/controller/StudyProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/classes/bupt/sse/SmartCampus/controller/StudyProfileController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/classes/bupt/sse/SmartCampus/dao/StudentMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/classes/bupt/sse/SmartCampus/dao/StudentMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/classes/bupt/sse/SmartCampus/interceptor/LoginInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/classes/bupt/sse/SmartCampus/interceptor/LoginInterceptor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/classes/bupt/sse/SmartCampus/model/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/classes/bupt/sse/SmartCampus/model/Student.class" afterDir="false" />
@@ -1481,6 +1475,7 @@
       <change beforePath="$PROJECT_DIR$/target/SmartCampus/static/js/toucheffects.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/SmartCampus/static/js/toucheffects.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/META-INF/SmartCampus.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/controller/StudyProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/controller/StudyProfileController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/dao/StudentMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/dao/StudentMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/interceptor/LoginInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/interceptor/LoginInterceptor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/Student.class" afterDir="false" />
@@ -1508,7 +1503,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/adminMain.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="396">
-              <caret line="12" column="6" selection-end-line="868" />
+              <caret line="87" column="34" selection-start-line="87" selection-start-column="34" selection-end-line="87" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -1544,6 +1539,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/studyProfile.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="427">
+              <caret line="938" column="14" selection-start-line="938" selection-start-column="14" selection-end-line="938" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/ConsumptionProfileController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="231">
@@ -1555,11 +1559,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/CounselorController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
+            <state relative-caret-position="422">
+              <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
               <folding>
                 <element signature="e#288#289#0" expanded="true" />
                 <element signature="e#312#313#0" expanded="true" />
@@ -1577,11 +1581,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/StudyProfileController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-330">
-              <caret line="35" column="53" selection-start-line="35" selection-start-column="53" selection-end-line="35" selection-end-column="53" />
+            <state relative-caret-position="1122">
+              <caret line="34" column="7" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1594,15 +1601,6 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/generatorConfig.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="43" column="74" selection-start-line="43" selection-start-column="74" selection-end-line="43" selection-end-column="74" />
             </state>
           </provider>
         </entry>
@@ -1671,8 +1669,8 @@
         <option value="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/service/CounselorServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/LoginController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/counselorMain.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/StudyProfileController.java" />
         <option value="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/CounselorController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/StudyProfileController.java" />
       </list>
     </option>
   </component>
@@ -1834,6 +1832,13 @@
               <item name="smart_campus" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smart_campus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smart_campus" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -1862,7 +1867,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1569057059307" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1569060572326" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -2147,7 +2152,7 @@
       <workItem from="1566209236562" duration="2017000" />
       <workItem from="1566688424479" duration="2555000" />
       <workItem from="1566691231798" duration="24394000" />
-      <workItem from="1569053672709" duration="3239000" />
+      <workItem from="1569053672709" duration="5634000" />
     </task>
     <task id="LOCAL-00001" summary="初始框架，完成登录功能，userID 20152120442 userPassword 123456&#10;类名用大驼峰 变量用小驼峰&#10;所有jsp放在WEB-INF/views下面&#10;每人分配一个Controller以减少冲突，曹锡鹏ScorePredictController 对应成绩分析功能&#10;来佳洁 StudyProfileController 对应学业画像展示&#10;于瑞杰 ConsumptionProfileController 对应消费画像展示">
       <created>1565278126087</created>
@@ -2156,11 +2161,18 @@
       <option name="project" value="LOCAL" />
       <updated>1565278126087</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="增加辅导员的登录 账号：20152120441 密码：123456">
+      <created>1569057195886</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1569057195886</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61613000" />
+    <option name="totallyTimeSpent" value="64008000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2175,7 +2187,7 @@
     <frame x="2728" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4984326" weight="0.20042644" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4984326" visible="true" weight="0.20042644" />
       <window_info id="Structure" order="1" sideWeight="0.5015674" side_tool="true" weight="0.15496911" />
       <window_info id="Designer" order="2" />
       <window_info id="JRebel" order="3" sideWeight="0.5015674" side_tool="true" weight="0.15496911" />
@@ -2189,7 +2201,7 @@
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="Find" order="3" />
       <window_info anchor="bottom" id="Run" order="4" sideWeight="0.49859628" weight="0.3264642" />
-      <window_info active="true" anchor="bottom" id="Debug" order="5" sideWeight="0.49747333" visible="true" weight="0.39804772" />
+      <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.4968017" visible="true" weight="0.39804772" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
       <window_info anchor="bottom" id="JRebel Console" order="8" sideWeight="0.5014881" weight="0.39696312" />
@@ -2197,11 +2209,11 @@
       <window_info anchor="bottom" id="Spring" order="10" sideWeight="0.4991578" weight="0.32924527" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4991578" weight="0.32924527" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.5014881" side_tool="true" weight="0.3299363" />
+      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.50319827" side_tool="true" weight="0.39804772" />
       <window_info anchor="bottom" id="Messages" order="14" sideWeight="0.4991578" weight="0.3253796" />
       <window_info anchor="bottom" id="Java Enterprise" order="15" sideWeight="0.49859628" weight="0.32924527" />
       <window_info anchor="bottom" id="Database Changes" order="16" />
-      <window_info anchor="bottom" id="Version Control" order="17" sideWeight="0.49747333" weight="0.32866243" />
+      <window_info anchor="bottom" id="Version Control" order="17" sideWeight="0.49733475" weight="0.3264642" />
       <window_info anchor="bottom" id="JRebel Executor" order="18" sideWeight="0.4985119" weight="0.3299363" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -2256,9 +2268,36 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="初始框架，完成登录功能，userID 20152120442 userPassword 123456&#10;类名用大驼峰 变量用小驼峰&#10;所有jsp放在WEB-INF/views下面&#10;每人分配一个Controller以减少冲突，曹锡鹏ScorePredictController 对应成绩分析功能&#10;来佳洁 StudyProfileController 对应学业画像展示&#10;于瑞杰 ConsumptionProfileController 对应消费画像展示" />
-    <option name="LAST_COMMIT_MESSAGE" value="初始框架，完成登录功能，userID 20152120442 userPassword 123456&#10;类名用大驼峰 变量用小驼峰&#10;所有jsp放在WEB-INF/views下面&#10;每人分配一个Controller以减少冲突，曹锡鹏ScorePredictController 对应成绩分析功能&#10;来佳洁 StudyProfileController 对应学业画像展示&#10;于瑞杰 ConsumptionProfileController 对应消费画像展示" />
+    <MESSAGE value="增加辅导员的登录 账号：20152120441 密码：123456" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加辅导员的登录 账号：20152120441 密码：123456" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
@@ -2483,13 +2522,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/studyProfile.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7254">
-          <caret line="1134" column="50" selection-start-line="1134" selection-start-column="39" selection-end-line="1134" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/dao/StudentMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -2557,13 +2589,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/LoginController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/AdminController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="135" column="25" selection-start-line="135" selection-start-column="25" selection-end-line="135" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="-40">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/model/Counselor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/studyProfile.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="938" column="14" selection-start-line="938" selection-start-column="14" selection-end-line="938" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -2577,10 +2620,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/AdminController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/counselorMain.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-40">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state relative-caret-position="198">
+          <caret line="87" column="42" lean-forward="true" selection-start-line="87" selection-start-column="42" selection-end-line="87" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="135" column="25" selection-start-line="135" selection-start-column="25" selection-end-line="135" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/adminMain.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="87" column="34" selection-start-line="87" selection-start-column="34" selection-end-line="87" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/CounselorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+          <folding>
+            <element signature="e#288#289#0" expanded="true" />
+            <element signature="e#312#313#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2594,41 +2665,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/adminMain.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="12" column="6" selection-end-line="868" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/counselorMain.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="87" column="42" lean-forward="true" selection-start-line="87" selection-start-column="42" selection-end-line="87" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/model/Counselor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/StudyProfileController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-330">
-          <caret line="35" column="53" selection-start-line="35" selection-start-column="53" selection-end-line="35" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/CounselorController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
+        <state relative-caret-position="1122">
+          <caret line="34" column="7" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
           <folding>
-            <element signature="e#288#289#0" expanded="true" />
-            <element signature="e#312#313#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
