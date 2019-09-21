@@ -8,6 +8,14 @@
     <result column="predictScore" jdbcType="INTEGER" property="predictscore" />
     <result column="reason" jdbcType="CHAR" property="reason" />
   </resultMap>
+  <resultMap id="BaseResultMapWithCourseInfo" type="bupt.sse.SmartCampus.model.PredictScore">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="studentId" jdbcType="VARCHAR" property="studentid" />
+    <result column="courseId" jdbcType="VARCHAR" property="courseid" />
+    <result column="predictScore" jdbcType="INTEGER" property="predictscore" />
+    <result column="reason" jdbcType="CHAR" property="reason" />
+    <result column="courseName" jdbcType="VARCHAR" property="coursename" />
+  </resultMap>
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">
@@ -82,6 +90,11 @@
     <if test="orderByClause != null">
       order by ${orderByClause}
     </if>
+  </select>
+  <select id="selectWithCourse" resultMap="BaseResultMapWithCourseInfo">
+    select *
+    from predictscore ps,course c
+    where ps.courseId=c.courseId and ps.studentId=#{studentid} and ps.predictscore=1
   </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 

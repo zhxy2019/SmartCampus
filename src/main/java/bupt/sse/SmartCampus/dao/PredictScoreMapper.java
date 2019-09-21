@@ -18,6 +18,8 @@ public interface PredictScoreMapper {
 
     List<PredictScore> selectByExample(PredictScoreExample example);
 
+    List<PredictScore> selectWithCourse(@Param("studentid") String studentId);
+
     PredictScore selectByPrimaryKey(Integer id);
 
     int updateByExampleSelective(@Param("record") PredictScore record, @Param("example") PredictScoreExample example);
@@ -27,4 +29,5 @@ public interface PredictScoreMapper {
     int updateByPrimaryKeySelective(PredictScore record);
 
     int updateByPrimaryKey(PredictScore record);
+
 }

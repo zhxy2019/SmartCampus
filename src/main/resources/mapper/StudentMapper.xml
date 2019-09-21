@@ -14,6 +14,22 @@
     <result column="grind" jdbcType="INTEGER" property="grind" />
     <result column="fail" jdbcType="INTEGER" property="fail" />
   </resultMap>
+  <resultMap id="BaseResultMapWithPredictInfo" type="bupt.sse.SmartCampus.model.Student">
+    <id column="studentId" jdbcType="VARCHAR" property="studentid" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="studentName" jdbcType="VARCHAR" property="studentname" />
+    <result column="classId" jdbcType="VARCHAR" property="classid" />
+    <result column="grade" jdbcType="CHAR" property="grade" />
+    <result column="weightScore" jdbcType="DOUBLE" property="weightscore" />
+    <result column="studentRank" jdbcType="INTEGER" property="studentrank" />
+    <result column="failureNum" jdbcType="INTEGER" property="failurenum" />
+    <result column="failureCredit" jdbcType="INTEGER" property="failurecredit" />
+    <result column="grind" jdbcType="INTEGER" property="grind" />
+    <result column="fail" jdbcType="INTEGER" property="fail" />
+    <result column="predictFailNum" jdbcType="INTEGER" property="predictfailnum" />
+    <result column="collegeName" jdbcType="INTEGER" property="collegename" />
+    <result column="majorName" jdbcType="INTEGER" property="majorname" />
+  </resultMap>
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">
@@ -91,10 +107,26 @@
     </if>
   </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
     from student
     where studentId = #{studentid,jdbcType=VARCHAR}
+  </select>
+  <select id="selectFailPercentage" resultType="java.util.HashMap">
+    select
+    co.collegeName as collegeName,sum(case when s.failureNum>0 then 1 else 0 end)/count(*) as percentage
+    from student s,class c,college co
+    where s.classId=c.classId and c.collegeId=co.collegeId and s.grade>#{grade} group by co.collegeId;
+  </select>
+  <select id="selectStudentWithPredictNum" resultMap="BaseResultMapWithPredictInfo">
+    select * from(
+    select
+    s.studentId,s.studentName,s.classId,s.grade,format(s.weightScore,2) as weightScore,s.studentRank,s.failureNum,s.failureCredit,s.grind,s.fail,sum(case when ps.predictScore=1 then 1 else 0 end) as predictFailNum,co.collegeName,co.majorName
+    from student s, class c, college co, predictscore ps
+    where s.classId=c.classId and c.collegeId=co.collegeId and c.majorId=co.majorId and s.studentId=ps.studentId
+     and co.collegeName=#{collegeName,jdbcType=VARCHAR} and s.grade>#{currentGrade}
+    group by s.studentId
+    order by predictFailNum desc,s.failureNum desc)as sel where predictFailNum>0
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from student

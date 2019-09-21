@@ -15,8 +15,8 @@ public class LoginInterceptor implements HandlerInterceptor {
             return true;
         }else {
             request.setAttribute("info","您尚未登陆！");
-            //response.sendRedirect(request.getContextPath()+"/login");
-            request.getRequestDispatcher("//login").forward(request, response);
+            response.sendRedirect(request.getContextPath()+"/login");
+//            request.getRequestDispatcher("//login").forward(request, response);
             return false;
         }
     }

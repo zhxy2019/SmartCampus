@@ -23,6 +23,12 @@ public class Student {
 
     private Integer fail;
 
+    private Integer predictfailnum;
+
+    private String collegename;
+
+    private String majorname;
+
     public String getStudentid() {
         return studentid;
     }
@@ -109,5 +115,29 @@ public class Student {
 
     public void setFail(Integer fail) {
         this.fail = fail;
+    }
+
+    public Integer getPredictfailnum() {
+        return predictfailnum;
+    }
+
+    public void setPredictfailnum(Integer predictfailnum) {
+        this.predictfailnum = predictfailnum;
+    }
+
+    public String getCollegename() {
+        return collegename;
+    }
+
+    public void setCollegename(String collegename) {
+        this.collegename = collegename;
+    }
+
+    public String getMajorname() {
+        return majorname;
+    }
+
+    public void setMajorname(String majorname) {
+        this.majorname = majorname;
     }
 }

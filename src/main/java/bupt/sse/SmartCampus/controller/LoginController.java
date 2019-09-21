@@ -100,11 +100,11 @@ public class LoginController {
         int role=user.getRole();
         switch (role){
             case 0:
-                //教务长
+                //教务处学生处
                 return "redirect:/admin/";
-//            case 1:
-//                //辅导员
-//                return "redirect:/counselor/";
+            case 1:
+                //辅导员
+                return "redirect:/counselor/";
 //            case 2:
 //                //学生
 //                return "redirect:/student/";

@@ -11,6 +11,9 @@ public class PredictScore {
 
     private String reason;
 
+    private String coursename;
+
+
     public Integer getId() {
         return id;
     }
@@ -49,5 +52,13 @@ public class PredictScore {
 
     public void setReason(String reason) {
         this.reason = reason == null ? null : reason.trim();
+    }
+
+    public String getCoursename() {
+        return coursename;
+    }
+
+    public void setCoursename(String coursename) {
+        this.coursename = coursename;
     }
 }

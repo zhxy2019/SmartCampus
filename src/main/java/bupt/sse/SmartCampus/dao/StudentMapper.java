@@ -3,6 +3,9 @@ package bupt.sse.SmartCampus.dao;
 import bupt.sse.SmartCampus.model.Student;
 import bupt.sse.SmartCampus.model.StudentExample;
 import java.util.List;
+import java.util.Map;
+
+import org.apache.ibatis.annotations.MapKey;
 import org.apache.ibatis.annotations.Param;
 
 public interface StudentMapper {
@@ -19,6 +22,10 @@ public interface StudentMapper {
     List<Student> selectByExample(StudentExample example);
 
     Student selectByPrimaryKey(String studentid);
+
+    List<Map<String, Object>> selectFailPercentage(@Param("grade") Integer grade);
+
+    List<Student> selectStudentWithPredictNum(@Param("collegeName") String collegeName,@Param("currentGrade") Integer currentGrade);
 
     int updateByExampleSelective(@Param("record") Student record, @Param("example") StudentExample example);
 
