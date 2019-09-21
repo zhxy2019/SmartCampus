@@ -41,7 +41,7 @@
         <!--<table tableName="college" domainObjectName="College"></table>-->
         <!--<table tableName="college_course" domainObjectName="CollegeCourse"></table>-->
         <!--<table tableName="user" domainObjectName="User"></table>-->
-        <!--<table tableName="counselor" domainObjectName="Counselor">-->
+        <table tableName="counselor" domainObjectName="Counselor"></table>
         <!--</table>-->
         <!--<table tableName="course" domainObjectName="Course"></table>-->
         <!--<table tableName="student" domainObjectName="Student"></table>-->
@@ -49,6 +49,6 @@
         <!--<table tableName="studentstudy" domainObjectName="StudentStudy"></table>-->
         <!--<table tableName="studentbehavior" domainObjectName="StudentBehavior"></table>-->
         <!--<table tableName="collegeanalysis" domainObjectName="CollegeAnalysis"></table>-->
-        <table tableName="predictScore" domainObjectName="PredictScore"></table>
+        <!--<table tableName="predictScore" domainObjectName="PredictScore"></table>-->
     </context>
 </generatorConfiguration>

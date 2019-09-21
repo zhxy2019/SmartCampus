@@ -2,8 +2,10 @@ package bupt.sse.SmartCampus.controller;
 
 
 import bupt.sse.SmartCampus.model.Administrator;
+import bupt.sse.SmartCampus.model.Counselor;
 import bupt.sse.SmartCampus.model.User;
 import bupt.sse.SmartCampus.service.AdministratorService;
+import bupt.sse.SmartCampus.service.CounselorService;
 import bupt.sse.SmartCampus.service.UserService;
 import bupt.sse.SmartCampus.utils.Message;
 import bupt.sse.SmartCampus.utils.VerifyCodeUtil;
@@ -32,6 +34,8 @@ public class LoginController {
     private UserService userService;
     @Autowired
     private AdministratorService administratorService;
+    @Autowired
+    private CounselorService counselorService;
     //默认首页
     @RequestMapping("/")
     public String index(HttpSession session){
@@ -120,6 +124,16 @@ public class LoginController {
         JSONObject jsonObject = JSONObject.fromObject(administrator);
         session.setAttribute("administrator", jsonObject);
         return "adminMain";
+    }
+    //跳转到辅导员首页
+    @RequestMapping("/counselor/")
+    public String counselorMain(HttpSession session){
+        //查询教务管理员基本信息
+        User user = (User) session.getAttribute("user");
+        Counselor counselor= counselorService.getCounselorInfo(user.getUserId());
+        JSONObject jsonObject = JSONObject.fromObject(counselor);
+        session.setAttribute("counselor", jsonObject);
+        return "counselorMain";
     }
 //
     @RequestMapping("/logout")

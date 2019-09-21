@@ -2,10 +2,15 @@ package bupt.sse.SmartCampus.service;
 
 import bupt.sse.SmartCampus.dao.StudentMapper;
 import bupt.sse.SmartCampus.dao.StudentStudyMapper;
+import bupt.sse.SmartCampus.model.Student;
+import bupt.sse.SmartCampus.model.StudentExample;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class StudentServiceImpl implements StudentService{
@@ -64,7 +69,7 @@ public class StudentServiceImpl implements StudentService{
     //////////////////////////////////////////////////////////////////////////////////
     //datatable所需单页学生列表
     @Override
-    public List<Student> getStudentPageDataByLabelAndGradeAndId(String label,String grade,String id,Integer pageNum,Integer pageSize){
+    public List<Student> getStudentPageDataByLabelAndGradeAndId(String label, String grade, String id, Integer pageNum, Integer pageSize){
         int index=getIndex(label);
         Integer rowNum=(pageNum-1)*pageSize;
         List<Student> studentList;
@@ -97,7 +102,7 @@ public class StudentServiceImpl implements StudentService{
 
     //graph所需统计数据
     @Override
-    public List<Map> getCountDataByLabelAndId(String label,String id){
+    public List<Map> getCountDataByLabelAndId(String label, String id){
         int index=getIndex(label);
         List<Map> countData;
         if(index<3){
