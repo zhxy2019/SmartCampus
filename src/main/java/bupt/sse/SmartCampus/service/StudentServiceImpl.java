@@ -1,5 +1,6 @@
 package bupt.sse.SmartCampus.service;
 
+import bupt.sse.SmartCampus.dao.PredictScoreMapper;
 import bupt.sse.SmartCampus.dao.StudentMapper;
 import bupt.sse.SmartCampus.dao.StudentStudyMapper;
 import bupt.sse.SmartCampus.model.Student;
@@ -18,7 +19,8 @@ public class StudentServiceImpl implements StudentService{
     StudentMapper studentMapper;
     @Autowired
     StudentStudyMapper studentStudyMapper;
-
+    @Autowired
+    PredictScoreMapper predictScoreMapper;
     @Override
     public Integer fizzySearchSum(String collegeName,String majorName,String grade,String studentId,String studentName,Integer pageNum,Integer pageSize){
         return studentMapper.selectStudentSumByCollegeOrMajorOrGradeOrStudent(collegeName,majorName,grade,studentId,studentName,pageNum,pageSize);
@@ -222,6 +224,20 @@ public class StudentServiceImpl implements StudentService{
     @Override
     public List<Student> getPredictStudentList(String collegeName, int currentGrade) {
         return studentMapper.selectStudentWithPredictNum(collegeName,currentGrade);
+    }
+
+    @Override
+    public Float getCollegePredictPercentage(int currentGrade, String collegeName) {
+        Float percentage;
+        if(collegeName.equals("")){
+            percentage= predictScoreMapper.selectPredictPercentage(currentGrade);
+        }else{
+            percentage=predictScoreMapper.selectCollegePredictPercentage(currentGrade,collegeName);
+        }
+        if(percentage==null){
+            percentage= Float.valueOf(0);
+        }
+        return percentage;
     }
 
 }

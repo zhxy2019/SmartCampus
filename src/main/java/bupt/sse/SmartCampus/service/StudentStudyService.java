@@ -8,4 +8,6 @@ import java.util.Map;
 public interface StudentStudyService {
 
     List<StudentStudy> getStudentStudyDataByStudentId(String studentId);
+
+    List<StudentStudy> getStudentStudyById(String studentId);
 }

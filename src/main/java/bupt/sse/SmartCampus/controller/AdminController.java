@@ -49,4 +49,16 @@ public class AdminController {
     public Message getReasonList(@RequestParam("studentId") String studentId,@RequestParam("courseId") String courseId){
         return mainController.getReasonList_admin(studentId,courseId);
     }
+    //获取点击的学生的所有标签
+    @RequestMapping(value = "/getStudentLabel",method = RequestMethod.POST)
+    @ResponseBody
+    public Message getStudentLabel(@RequestParam("studentId") String studentId){
+        return mainController.getStudentLabel_admin(studentId);
+    }
+    //获取首页挂科告警百分比
+    @RequestMapping(value = "/getAlertPercentage",method = RequestMethod.POST)
+    @ResponseBody
+    public Message getAlertPercentage(@RequestParam("collegeName") String collegeName){
+        return mainController.getAlertPercentage_admin(collegeName);
+    }
 }
