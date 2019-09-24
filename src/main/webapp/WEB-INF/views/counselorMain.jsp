@@ -85,7 +85,7 @@
                 </li>
 
                 <li>
-                    <a href="<%=basepath%>counselor/study">
+                    <a href="counselor/study">
                         <i class="icon-book"></i>
                         <span>学业画像</span>
                     </a>

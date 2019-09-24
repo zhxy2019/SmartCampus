@@ -4,6 +4,7 @@ import bupt.sse.SmartCampus.dao.StudentMapper;
 import bupt.sse.SmartCampus.dao.StudentStudyMapper;
 import bupt.sse.SmartCampus.model.Student;
 import bupt.sse.SmartCampus.model.StudentExample;
+import org.omg.PortableInterceptor.INACTIVE;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,7 +30,17 @@ public class StudentServiceImpl implements StudentService{
        return studentMapper.selectStudentDataByCollegeOrMajorOrGradeOrStudent(collegeName,majorName,grade,studentId,studentName,pageNum,pageSize);
     }
 
-    //datatable所需totalrecords
+    @Override
+    public Integer fizzySearchSum_counselor(String counselorId,String classId,String studentId,String studentName,Integer pageNum,Integer pageSize){
+        return studentMapper.selectStudentSumByClassOrStudent_counselor(counselorId,classId,studentId,studentName,pageNum,pageSize);
+    }
+
+    @Override
+    public List<Map> fizzySearchData_counselor(String counselorId,String classId,String studentId,String studentName,Integer pageNum,Integer pageSize){
+        return studentMapper.selectStudentDataByClassOrStudent_counselor(counselorId,classId,studentId,studentName,pageNum,pageSize);
+    }
+
+    //datatable所需totalrecords-教务员
     @Override
     public Integer getStudentSumByLabelAndGradeAndId(String label,String grade,String id){
         int index=getIndex(label);
@@ -45,9 +56,9 @@ public class StudentServiceImpl implements StudentService{
         }else if(index>6){
             //ascend-----------------------------------------------------------------------------------
             if(id.equals("all"))
-                studentSum=studentStudyMapper.sumStudentByAscendAndYear(index-7,grade+"%");
+                studentSum=studentStudyMapper.sumStudentByAscendAndYear(index-7,grade);
             else
-                studentSum=studentStudyMapper.sumStudentByAscendAndYearAndId(index-7,grade+"%",id);
+                studentSum=studentStudyMapper.sumStudentByAscendAndYearAndId(index-7,grade,id);
 
         }else{
             //fail-----------------------------------------------------------------------------------
@@ -59,6 +70,37 @@ public class StudentServiceImpl implements StudentService{
         return studentSum;
     }
 
+    //datatable所需totalrecords-辅导员
+    @Override
+    public Integer getStudentSumByLabelAndYearAndId_counselor(String label,String year,String counselorId,String classId){
+        int index=getIndex(label);
+        Integer studentSum;
+        if(index<3){
+            //grind-----------------------------------------------------------------------------------
+            if(classId.equals("all"))
+                //所有学院-------------------------------------
+                studentSum=studentMapper.sumStudentByGrind_counselor(index,counselorId);
+            else
+                studentSum=studentMapper.sumStudentByGrindAndId_counselor(index,classId);
+
+        }else if(index>6){
+            //ascend-----------------------------------------------------------------------------------
+            if(classId.equals("all"))
+                studentSum=studentStudyMapper.sumStudentByAscendAndYear_counselor(index-7,year,counselorId);
+            else
+                studentSum=studentStudyMapper.sumStudentByAscendAndYearAndId_counselor(index-7,year,classId);
+
+        }else{
+            //fail-----------------------------------------------------------------------------------
+            if(classId.equals("all"))
+                studentSum=studentMapper.sumStudentByFail_counselor(index-3,counselorId);
+            else
+                studentSum=studentMapper.sumStudentByFailAndId_counselor(index-3,classId);
+        }
+        return studentSum;
+    }
+
+
 //    @Override
 //    public Map<Integer,Integer> getFailNumByGrade(Integer grade){
 //        Map<Integer,Integer> failMap=studentMapper.test(grade);
@@ -67,7 +109,7 @@ public class StudentServiceImpl implements StudentService{
 //    }
 
     //////////////////////////////////////////////////////////////////////////////////
-    //datatable所需单页学生列表
+    //datatable所需单页学生列表-教务员
     @Override
     public List<Student> getStudentPageDataByLabelAndGradeAndId(String label, String grade, String id, Integer pageNum, Integer pageSize){
         int index=getIndex(label);
@@ -99,8 +141,41 @@ public class StudentServiceImpl implements StudentService{
 
     }
 
+    //datatable所需单页学生列表-辅导员
+    @Override
+    public List<Student> getStudentPageDataByLabelAndYearAndId_counselor(String label, String year,String counselorId,
+                                                                         String classId, Integer pageNum, Integer pageSize){
+        int index=getIndex(label);
+        Integer rowNum=(pageNum-1)*pageSize;
+        List<Student> studentList;
+        if(index<3){
+            //grind-----------------------------------------------------------------------------------
+            if(classId.equals("all"))
+                //所有学院-------------------------------------
+                studentList=studentMapper.getGrindStudentDataByPage_counselor(index,counselorId,rowNum,pageSize);
+            else
+                studentList=studentMapper.getGrindStudentDataByPageAndId_counselor(index,classId,rowNum,pageSize);
 
-    //graph所需统计数据
+        }else if(index>6){
+            //ascend-----------------------------------------------------------------------------------
+            if(classId.equals("all"))
+                studentList=studentMapper.getAscendStudentDataByPage_counselor(index-7,counselorId,year,rowNum,pageSize);
+            else
+                studentList=studentMapper.getAscendStudentDataByPageAndId_counselor(index-7,year,classId,rowNum,pageSize);
+
+        }else{
+            //fail-----------------------------------------------------------------------------------
+            if(classId.equals("all"))
+                studentList=studentMapper.getFailStudentDataByPage_counselor(index-3,counselorId,rowNum,pageSize);
+            else
+                studentList=studentMapper.getFailStudentDataByPageAndId_counselor(index-3,classId,rowNum,pageSize);
+        }
+        return studentList;
+
+    }
+
+
+    //graph所需统计数据-教务员
     @Override
     public List<Map> getCountDataByLabelAndId(String label, String id){
         int index=getIndex(label);
@@ -130,7 +205,7 @@ public class StudentServiceImpl implements StudentService{
         return countData;
     }
 
-    //graph占比所需数据
+    //graph占比所需数据-教务员
     @Override
     public Map getSumDataByLabelAndId(String label,String id){
         int index=getIndex(label);
@@ -157,6 +232,52 @@ public class StudentServiceImpl implements StudentService{
             else
                 sumData=studentMapper.sumFailById(id);
         }
+        return sumData;
+    }
+
+
+    //graph所需统计数据-辅导员
+    @Override
+    public Map getCountGrindDataById_counselor(String counselorId,String classId){
+        Map countData;
+        //ascend-----------------------------------------------------------------------------------
+        if(classId.equals("all"))
+            countData=studentMapper.countGrind_counselor(counselorId);
+        else
+            countData=studentMapper.countGrindById_counselor(classId);
+        return countData;
+    }
+    @Override
+    public Map getCountFailDataById_counselor(String counselorId,String classId){
+        Map countData;
+        //ascend-----------------------------------------------------------------------------------
+        if(classId.equals("all"))
+            countData=studentMapper.countFail_counselor(counselorId);
+        else
+            countData=studentMapper.countFailById_counselor(classId);
+        return countData;
+    }
+    @Override
+    public List<Map> getCountAscendDataById_counselor(String counselorId,String classId){
+        List<Map> countData;
+        //ascend-----------------------------------------------------------------------------------
+        if(classId.equals("all"))
+            countData=studentStudyMapper.countAscend_counselor(counselorId);
+        else
+            countData=studentStudyMapper.countAscendById_counselor(classId);
+        return countData;
+    }
+
+    //graph占比所需数据-辅导员 只有计算ascend会用
+    @Override
+    public Map getSumAscendDataById_counselor(String counselorId,String id){
+
+        Map sumData;
+        //ascend-----------------------------------------------------------------------------------
+        if(id.equals("all"))
+            sumData=studentStudyMapper.sumAscend_counselor(counselorId);
+        else
+            sumData=studentStudyMapper.sumAscendById_counselor(id);
         return sumData;
     }
 

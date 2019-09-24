@@ -37,10 +37,17 @@ public interface StudentStudyMapper {
     Map sumAscend();
     Map sumAscendById(@Param("id") String id);
     Integer sumStudentByAscend(@Param("ascend") Integer ascend);
+    List<Map> countAscend_counselor(@Param("counselorId") String counselorId);
+    List<Map> countAscendById_counselor(@Param("classId") String classId);
+    Map sumAscend_counselor(@Param("counselorId") String counselorId);
+    Map sumAscendById_counselor(@Param("classId") String classId);
 
     //datatable所需totalrecords
     Integer sumStudentByAscendAndYear(@Param("ascend") Integer ascend,@Param("year") String year);
     Integer sumStudentByAscendAndYearAndId(@Param("ascend") Integer ascend,@Param("year") String year,@Param("id") String id);
+
+    Integer sumStudentByAscendAndYear_counselor(@Param("ascend") Integer ascend,@Param("year") String year,@Param("counselorId") String counselorId);
+    Integer sumStudentByAscendAndYearAndId_counselor(@Param("ascend") Integer ascend,@Param("year") String year,@Param("classId") String classId);
 
 
     List<StudentStudy> getStudentStudyDataByStudentId(@Param("studentId") String studentId);

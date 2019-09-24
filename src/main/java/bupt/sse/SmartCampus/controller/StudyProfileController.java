@@ -5,6 +5,7 @@ import bupt.sse.SmartCampus.model.Class;
 import bupt.sse.SmartCampus.service.*;
 import bupt.sse.SmartCampus.utils.Message;
 import bupt.sse.SmartCampus.utils.PageBean;
+import net.sf.json.JSONObject;
 import org.omg.PortableInterceptor.INACTIVE;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,7 +22,6 @@ import java.util.Map;
 import java.util.Set;
 
 @Controller
-@RequestMapping("/study")
 public class StudyProfileController {
     @Autowired
     private StudentService studentService;
@@ -31,33 +31,13 @@ public class StudyProfileController {
     private StudentCourseService studentCourseService;
     @Autowired
     private CollegeService collegeService;
+    @Autowired
+    private ClassService classService;
 
-    @RequestMapping("/")
-    public String index(HttpSession session){
-        User user= (User) session.getAttribute("user");
-        if(user!=null){
-            //已经登录,跳转到学业画像页面
-            return "studyProfile";
-        }
-        return "login";
-    }
 
-    @RequestMapping("/searchStudent")
-    @ResponseBody
-    public Message searchStudent(HttpSession session,
-                                 @RequestParam(value ="collegeName", required = false) String collegeName,
-                                 @RequestParam(value ="majorName", required = false) String majorName,
-                                 @RequestParam(value ="grade", required = false) String grade,
-                                 @RequestParam(value ="studentId", required = false) String studentId,
-                                 @RequestParam(value ="studentName", required = false) String studentName,
-                                 @RequestParam(value = "pageNum", required = false)Integer pageNum,
-                                 @RequestParam(value = "draw", required = false)Integer draw) {
-        System.out.println("====================searchStudent" + grade + studentId + studentName + "=======================");
-        System.out.println(collegeName);
-        System.out.println(majorName);
-        System.out.println(grade);
-        System.out.println(studentId);
-        System.out.println(studentName);
+    public Message searchStudent_admin(HttpSession session,String collegeName,String majorName,String grade,String studentId,
+                                      String studentName,Integer pageNum,Integer draw) {
+        System.out.println("====================searchStudent_admin" + grade + studentId + studentName + "=======================");
         Message result;
         User user = (User) session.getAttribute("user");
         if (user != null) {
@@ -85,13 +65,36 @@ public class StudyProfileController {
         return Message.fail("请先登录系统！");
     }
 
+    public Message searchStudent_counselor(HttpSession session,String classId,String studentId,
+                                       String studentName,Integer pageNum,Integer draw) {
+        System.out.println("====================searchStudent_counselor" + classId + studentId + studentName + "=======================");
+        Message result;
+        User user = (User) session.getAttribute("user");
+        if (user != null) {
+            JSONObject counselor=(JSONObject) session.getAttribute("counselor");
+            String counselorId= counselor.getString("counselorid");
+            classId="%"+classId+"%";
+            studentId="%"+studentId+"%";
+            studentName="%"+studentName+"%";
+            int totalRecord;
+            int pageSize=10;
+            List<Map> recordWithPageSize;
+            totalRecord=studentService.fizzySearchSum_counselor(counselorId,classId,studentId,studentName,pageNum,pageSize);
+            recordWithPageSize=studentService.fizzySearchData_counselor(counselorId,classId,studentId,studentName,pageNum,pageSize);
+            PageBean pb=new PageBean(pageNum,pageSize,totalRecord,draw);
+            pb.setList(recordWithPageSize);
+            if(pb == null){
+                result=Message.fail("nopb");
+            }else {
+                result=Message.success().add("pb",pb);
+            }
+            return result;
+        }
+        return Message.fail("请先登录系统！");
+    }
 
     //获取某学院或某专业某个标签下的各年级/学年统计数据及总占比
-    @RequestMapping("/countDataByLabelAndId")
-    @ResponseBody
-    public Message countDataByLabelAndId(HttpSession session,
-                                         @RequestParam(value ="label", required = false) String label,
-                                         @RequestParam(value ="id", required = false) String id
+    public Message countDataByLabelAndId_admin(HttpSession session,String label,String id
     ){
         System.out.println("====================countDataByLabelAndId"+label+id+"=======================");
         Message result;
@@ -114,25 +117,68 @@ public class StudyProfileController {
             }
             result=Message.success().add("percentList",percentList).add("countData",countData);
             return result;
+        }
+        return Message.fail("请先登录系统！");
+    }
 
-
+    //获取某辅导员下所有或某班级的统计数据及标签占比
+    public Message countDataByLabelAndId_counselor(HttpSession session,String label,String id){
+        System.out.println("====================countDataByLabelAndId_counselor"+label+id+"=======================");
+        Message result;
+        User user= (User) session.getAttribute("user");
+        if(user!=null){
+            JSONObject counselor=(JSONObject) session.getAttribute("counselor");
+            String counselorId= counselor.getString("counselorid");
+            List<Integer> countList=new ArrayList<>();
+            Map<String,Long> sumData;
+            int index=studentService.getIndex(label);
+            if (index<3){
+                Map<String,Long> countGrindData=studentService.getCountGrindDataById_counselor(counselorId,id);
+                for(String key : countGrindData.keySet()) {
+                    countList.add(countGrindData.get(key).intValue());
+                }
+                result=Message.success().add("countData",countList);
+                sumData=countGrindData;
+                System.out.println(sumData);
+            }
+            else if(index>6){
+                List<Map> countAscendData=studentService.getCountAscendDataById_counselor(counselorId,id);
+                result=Message.success().add("countData",countAscendData);
+                sumData=studentService.getSumAscendDataById_counselor(counselorId,id);
+            }
+            else{
+                Map<String,Long> countFailData=studentService.getCountFailDataById_counselor(counselorId,id);
+                for(String key : countFailData.keySet()) {
+                    countList.add(countFailData.get(key).intValue());
+                }
+                result=Message.success().add("countData",countList);
+                sumData=countFailData;
+                System.out.println(sumData);
+            }
+            List<Integer> percentList=new ArrayList<>();
+            Integer sum=0;
+            for(String key : sumData.keySet()) {
+                sum = sum + sumData.get(key).intValue();
+            }
+            for(String key : sumData.keySet()){
+                if (sum==0){
+                    return Message.fail("数据缺失！");
+                }else{
+                    percentList.add(sumData.get(key).intValue()*100/sum);
+                }
+            }
+            result.add("percentList",percentList);
+            return result;
         }
         return Message.fail("请先登录系统！");
     }
 
 
     //抽取符合标签的学生数据
-    @RequestMapping("/studentDataByLabelAndId")
-    @ResponseBody
-    public Message studentDataByLabelAndId(@RequestParam(value ="label", required = false) String label,
-                                      @RequestParam(value ="grade", required = false) String grade,
-                                      @RequestParam(value ="id", required = false) String id,
-                                      @RequestParam(value = "pageNum", required = false)Integer pageNum,
-                                      @RequestParam(value = "draw", required = false)Integer draw,
-                                      HttpSession session)throws IOException{
+    public Message studentDataByLabelAndId_admin(HttpSession session,String label,String grade,
+                                                 String id,Integer pageNum,Integer draw)throws IOException{
         System.out.println("====================studentDataByLabelAndId"+label+id+grade+"=======================");
         Message result;
-        System.out.println(id);
         User user= (User) session.getAttribute("user");
         if(user!=null){
         //已经登录,跳转到学业画像页面
@@ -156,15 +202,40 @@ public class StudyProfileController {
         return Message.fail("请先登录系统！");
     }
 
+    //抽取符合标签的学生数据-辅导员
+    public Message studentDataByLabelAndId_counselor(HttpSession session,String label,String year,
+                                                 String id,Integer pageNum,Integer draw)throws IOException{
+        System.out.println("====================studentDataByLabelAndId"+label+id+year+"=======================");
+        Message result;
+        User user= (User) session.getAttribute("user");
+        if(user!=null){
+            //已经登录,跳转到学业画像页面
+            JSONObject counselor=(JSONObject) session.getAttribute("counselor");
+            String counselorId= counselor.getString("counselorid");
+            int totalRecord;
+            int pageSize=10;
+            List<Student> recordWithPageSize;
+            totalRecord=studentService.getStudentSumByLabelAndYearAndId_counselor(label,year,counselorId,id);
+            recordWithPageSize=studentService.getStudentPageDataByLabelAndYearAndId_counselor(label,year,counselorId,id,pageNum,pageSize);
+
+            PageBean pb=new PageBean(pageNum,pageSize,totalRecord,draw);
+            pb.setList(recordWithPageSize);
+            if(pb == null){
+                result=Message.fail("nopb");
+            }else {
+                result=Message.success().add("datawithpage",pb);
+            }
+            System.out.print("打印pb:");
+            System.out.print(pb);
+            return result;
+        }
+        return Message.fail("请先登录系统！");
+    }
 
 
     //获取某个学生的所有数据
-    @RequestMapping("/allDataByStudent")
-    @ResponseBody
-    public Message allDataByStudent(@RequestParam(value ="studentId", required = false) String studentId,
-                                    HttpSession session)throws IOException{
+    public Message allDataByStudent(HttpSession session,String studentId)throws IOException{
         System.out.println("====================allDataByStudent"+studentId+"=======================");
-        System.out.println(studentId);
         Message result;
         User user= (User) session.getAttribute("user");
         if(user!=null){
@@ -205,11 +276,8 @@ public class StudyProfileController {
     //某学生某学年所有课程成绩信息
     @RequestMapping("/courseDataByStudent")
     @ResponseBody
-    public Message courseDataByStudent(@RequestParam(value ="studentId", required = false) String studentId,
-                                       @RequestParam(value ="year", required = false) String year,
-                                       HttpSession session)throws IOException {
+    public Message courseDataByStudent(HttpSession session,String studentId,String year)throws IOException {
         System.out.println("====================courseDataByStudent" + studentId + "=======================");
-        System.out.println(studentId);
         Message result;
         User user= (User) session.getAttribute("user");
         if(user!=null){
@@ -224,8 +292,6 @@ public class StudyProfileController {
 
 
     //所有学院信息
-    @RequestMapping("/collegeIdAndName")
-    @ResponseBody
     public Message collegeIdAndName(HttpSession session)throws IOException {
         System.out.println("====================collegeIdAndName=======================");
         Message result;
@@ -242,10 +308,7 @@ public class StudyProfileController {
 
 
     //某学院所有专业信息
-    @RequestMapping("/majorIdAndName")
-    @ResponseBody
-    public Message majorIdAndName(HttpSession session,
-                                  @RequestParam(value ="collegeId", required = false) String collegeId)throws IOException {
+    public Message majorIdAndName(HttpSession session,String collegeId)throws IOException {
         System.out.println("====================majorIdAndName=======================");
         Message result;
         User user= (User) session.getAttribute("user");
@@ -254,6 +317,23 @@ public class StudyProfileController {
             List<Map> majorDataList=collegeService.getMajorIdAndNameByCollegeId(collegeId);
             System.out.println(majorDataList);
             result=Message.success().add("majorData",majorDataList);
+            return result;
+        }
+        return Message.fail("请先登录系统！");
+    }
+
+    //某辅导员所有班级信息
+    public Message classIdByCounselor(HttpSession session)throws IOException {
+        System.out.println("====================classIdByCounselor=======================");
+        Message result;
+        User user= (User) session.getAttribute("user");
+        if(user!=null){
+            //已经登录,跳转到学业画像页面
+            JSONObject counselor=(JSONObject) session.getAttribute("counselor");
+            String counselorId= counselor.getString("counselorid");
+            List<Integer> classDataList=classService.getClassIdByCounselorId(counselorId);
+            System.out.println(classDataList);
+            result=Message.success().add("classData",classDataList);
             return result;
         }
         return Message.fail("请先登录系统！");

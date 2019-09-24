@@ -27,4 +27,6 @@ public interface ClassMapper {
     int updateByPrimaryKeySelective(Class record);
 
     int updateByPrimaryKey(Class record);
+
+    List<Integer> selectClassIdByCounselorId(@Param("counselorId") String counselorId);
 }

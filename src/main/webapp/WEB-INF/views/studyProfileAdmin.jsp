@@ -46,13 +46,6 @@
     <script src="static/js/respond.min.js"></script>
     <![endif]-->
 
-    <style>
-        tfoot input {
-            width: 100%;
-            padding: 3px;
-            box-sizing: border-box;
-        }
-    </style>
 </head>
 <body>
 
@@ -99,7 +92,7 @@
                 </li>
 
                 <li>
-                    <a href="study/">
+                    <a href="admin/study/">
                         <i class="icon-book"></i>
                         <span>学业画像</span>
                     </a>
@@ -462,7 +455,6 @@
     var ascend_data,ascend_percent;
     var ascendType=['成绩上升', '成绩稳定', '成绩下降'];
     var curLabel;
-    var graphGrade=[2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018];
 
     $(document).ready(function (e) {
 
@@ -522,7 +514,7 @@
 
         //获取学院信息
         $.ajax({
-            url:$('base').attr('href')+"study/collegeIdAndName",
+            url:$('base').attr('href')+"admin/collegeIdAndName",
             type: "post",
             dataType: 'json',
             success: function (datac) {
@@ -539,7 +531,7 @@
                         getGraphDataByLabelAndId(curLabel,ec.target.value);
                         //获取专业信息
                         $.ajax({
-                            url:$('base').attr('href')+"study/majorIdAndName",
+                            url:$('base').attr('href')+"admin/majorIdAndName",
                             type: "post",
                             data:{"collegeId":ec.target.value},
                             dataType: 'json',
@@ -651,7 +643,7 @@
                 },
                 ajax: {
                     type: "post",
-                    url: $('base').attr('href') + "study/searchStudent",
+                    url: $('base').attr('href') + "admin/searchStudent_admin",
                     async:true,
                     cache:true,
                     data:function(d){
@@ -713,7 +705,7 @@
     // 从后端获取统计数据 某个标签下的某个学院的某个专业
     function getGraphDataByLabelAndId(label,id) {
         $.ajax({
-            url:$('base').attr('href')+"study/countDataByLabelAndId",
+            url:$('base').attr('href')+"admin/countDataByLabelAndId_admin",
             type: "post",
             data:{"label":label,"id":id},
             dataType: 'json',
@@ -733,7 +725,7 @@
                         for(var i=0;i<=2;i++){
                             grind_percent.push({
                                 label:studentType[i],
-                                value: grindPercent[i]
+                                value: grindPercent[2-i]
                             });
                         }
                     }else if (ascendType.includes(label)){
@@ -746,7 +738,7 @@
                         for(var i=0;i<=2;i++){
                             ascend_percent.push({
                                 label:ascendType[i],
-                                value: ascendPercent[i]
+                                value: ascendPercent[2-i]
                             });
                         }
                         yearflag=1;
@@ -760,7 +752,7 @@
                         for(var i=0;i<=3;i++){
                             fail_percent.push({
                                 label:failType[i],
-                                value: failPercent[i]
+                                value: failPercent[3-i]
                             });
                         }
                     }
@@ -1001,7 +993,7 @@
             },
             ajax: {
                 type: "post",
-                url: $('base').attr('href') + "study/studentDataByLabelAndId",
+                url: $('base').attr('href') + "admin/studentDataByLabelAndId_admin",
                 // url: "/study/studentDataByLabel",
                 async:true,
                 cache:true,
@@ -1075,7 +1067,7 @@
             $("#student_cloud_panel").html('<div id="student_cloud"></div>');
         }
         $.ajax({
-            url:$('base').attr('href')+"study/allDataByStudent",
+            url:$('base').attr('href')+"admin/allDataByStudent",
             type: "post",
             dataType: 'json',
             data:{'studentId':studentId},
@@ -1132,7 +1124,9 @@
                         columns:[
                             { "data": "year" },
                             { "data": "term" },
-                            { "data": "weightscore" },
+                            { "data": null,"render":function(data,type,row){
+                                    return Math.round(data.weightscore);
+                                } },
                             { "data": "studentrank" },
                             { "data": null,"render":function(data,type,row){
                                     return ascendType[data.ascend].substr(2,2);
@@ -1177,14 +1171,15 @@
         var courseData;
         $.ajax({
             type:"post",
-            url:$('base').attr('href')+"study/courseDataByStudent",
+            url:$('base').attr('href')+"admin/courseDataByStudent",
             data:{'studentId':studentId,"year":year},
             success: function (data) {
                 if (data.code === 100) {
                     courseData=data.content.courseData;
                     console.log(courseData);
                     courseTable=$('#courseTable').DataTable({
-                        paging:false,
+                        lengthChange:false,
+                        paging:true,
                         searchable:false,
                         autoWidth:false,
                         info:false,
