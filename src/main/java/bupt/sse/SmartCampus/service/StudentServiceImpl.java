@@ -1,5 +1,6 @@
 package bupt.sse.SmartCampus.service;
 
+import bupt.sse.SmartCampus.dao.PredictScoreMapper;
 import bupt.sse.SmartCampus.dao.StudentMapper;
 import bupt.sse.SmartCampus.dao.StudentStudyMapper;
 import bupt.sse.SmartCampus.model.Student;
@@ -19,7 +20,8 @@ public class StudentServiceImpl implements StudentService{
     StudentMapper studentMapper;
     @Autowired
     StudentStudyMapper studentStudyMapper;
-
+    @Autowired
+    PredictScoreMapper predictScoreMapper;
     @Override
     public Integer fizzySearchSum(String collegeName,String majorName,String grade,String studentId,String studentName,Integer pageNum,Integer pageSize){
         return studentMapper.selectStudentSumByCollegeOrMajorOrGradeOrStudent(collegeName,majorName,grade,studentId,studentName,pageNum,pageSize);
@@ -290,7 +292,7 @@ public class StudentServiceImpl implements StudentService{
     //辅助函数
     @Override
     public Integer getIndex(String label){
-        String[] labels={"学霸","学习普通","学渣","无挂科","有挂科","有留级风险","有退学风险","成绩上升","成绩稳定","成绩下降"};
+        String[] labels={"学习优秀","学习普通","学习困难","无挂科","有挂科","有留级风险","有退学风险","成绩上升","成绩稳定","成绩下降"};
         int index=0;
         for(;index<labels.length;index++){
             if(labels[index].equals(label))
@@ -343,6 +345,20 @@ public class StudentServiceImpl implements StudentService{
     @Override
     public List<Student> getPredictStudentList(String collegeName, int currentGrade) {
         return studentMapper.selectStudentWithPredictNum(collegeName,currentGrade);
+    }
+
+    @Override
+    public Float getCollegePredictPercentage(int currentGrade, String collegeName) {
+        Float percentage;
+        if(collegeName.equals("")){
+            percentage= predictScoreMapper.selectPredictPercentage(currentGrade);
+        }else{
+            percentage=predictScoreMapper.selectCollegePredictPercentage(currentGrade,collegeName);
+        }
+        if(percentage==null){
+            percentage= Float.valueOf(0);
+        }
+        return percentage;
     }
 
 }

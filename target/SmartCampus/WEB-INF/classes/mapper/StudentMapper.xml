@@ -14,6 +14,22 @@
     <result column="grind" jdbcType="INTEGER" property="grind" />
     <result column="fail" jdbcType="INTEGER" property="fail" />
   </resultMap>
+  <resultMap id="BaseResultMapWithPredictInfo" type="bupt.sse.SmartCampus.model.Student">
+    <id column="studentId" jdbcType="VARCHAR" property="studentid" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="studentName" jdbcType="VARCHAR" property="studentname" />
+    <result column="classId" jdbcType="VARCHAR" property="classid" />
+    <result column="grade" jdbcType="CHAR" property="grade" />
+    <result column="weightScore" jdbcType="DOUBLE" property="weightscore" />
+    <result column="studentRank" jdbcType="INTEGER" property="studentrank" />
+    <result column="failureNum" jdbcType="INTEGER" property="failurenum" />
+    <result column="failureCredit" jdbcType="INTEGER" property="failurecredit" />
+    <result column="grind" jdbcType="INTEGER" property="grind" />
+    <result column="fail" jdbcType="INTEGER" property="fail" />
+    <result column="predictFailNum" jdbcType="INTEGER" property="predictfailnum" />
+    <result column="collegeName" jdbcType="INTEGER" property="collegename" />
+    <result column="majorName" jdbcType="INTEGER" property="majorname" />
+  </resultMap>
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">
@@ -91,10 +107,26 @@
     </if>
   </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
     from student
     where studentId = #{studentid,jdbcType=VARCHAR}
+  </select>
+  <select id="selectFailPercentage" resultType="java.util.HashMap">
+    select
+    co.collegeName as collegeName,sum(case when s.failureNum>0 then 1 else 0 end)/count(*) as percentage
+    from student s,class c,college co
+    where s.classId=c.classId and c.collegeId=co.collegeId and s.grade>#{grade} group by co.collegeId;
+  </select>
+  <select id="selectStudentWithPredictNum" resultMap="BaseResultMapWithPredictInfo">
+    select * from(
+    select
+    s.studentId,s.studentName,s.classId,s.grade,format(s.weightScore,2) as weightScore,s.studentRank,s.failureNum,s.failureCredit,s.grind,s.fail,sum(case when ps.predictScore=1 then 1 else 0 end) as predictFailNum,co.collegeName,co.majorName
+    from student s, class c, college co, predictscore ps
+    where s.classId=c.classId and c.collegeId=co.collegeId and c.majorId=co.majorId and s.studentId=ps.studentId
+     and co.collegeName=#{collegeName,jdbcType=VARCHAR} and s.grade>#{currentGrade}
+    group by s.studentId
+    order by predictFailNum desc,s.failureNum desc)as sel where predictFailNum>0
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from student
@@ -305,7 +337,7 @@
   </update>
 
 
-  <select id="countGrind" resultType="java.util.Map">
+  <select id="countGrind" resultType="java.util.LinkedHashMap">
     select grade,
     count(if(grind=0,true,null)) as grind0,
     count(if(grind=1,true,null)) as grind1,
@@ -314,7 +346,7 @@
     where grade>=2006
     group by grade;
   </select>
-  <select id="countGrindById" resultType="java.util.Map">
+  <select id="countGrindById" resultType="java.util.LinkedHashMap">
     select s.grade,
     count(if(s.grind=0,true,null)) as grind0,
     count(if(s.grind=1,true,null)) as grind1,
@@ -325,14 +357,14 @@
     and s.grade>=2006
     group by s.grade;
   </select>
-  <select id="sumGrind" resultType="java.util.Map">
+  <select id="sumGrind" resultType="java.util.LinkedHashMap">
     select count(if(grind=0,true,null)) as grind0,
     count(if(grind=1,true,null)) as grind1,
     count(if(grind=2,true,null)) as grind2
     from scoreanalysis.student
     where grade>=2006;
   </select>
-  <select id="sumGrindById" resultType="java.util.Map">
+  <select id="sumGrindById" resultType="java.util.LinkedHashMap">
     select count(if(s.grind=0,true,null)) as grind0,
     count(if(s.grind=1,true,null)) as grind1,
     count(if(s.grind=2,true,null)) as grind2
@@ -346,9 +378,28 @@
     where grind = #{grind,jdbcType=INTEGER}
     and grade != 0;
   </select>
+  <select id="countGrind_counselor" resultType="java.util.LinkedHashMap">
+    select
+    count(if(s.grind=0,true,null)) as grind0,
+    count(if(s.grind=1,true,null)) as grind1,
+    count(if(s.grind=2,true,null)) as grind2
+    from scoreanalysis.student as s, class as c
+    where s.classId=c.classId
+    and c.counselorId=#{counselorId,jdbcType=VARCHAR};
+  </select>
+  <select id="countGrindById_counselor" resultType="java.util.LinkedHashMap">
+    select
+    count(if(s.grind=0,true,null)) as grind0,
+    count(if(s.grind=1,true,null)) as grind1,
+    count(if(s.grind=2,true,null)) as grind2
+    from scoreanalysis.student as s, class as c
+    where s.classId=c.classId
+    and c.classId=#{classId,jdbcType=VARCHAR}
+
+  </select>
 
 
-  <select id="countFail" resultType="java.util.Map">
+  <select id="countFail" resultType="java.util.LinkedHashMap">
     select grade,
     count(if(fail=0,true,null)) as fail0,
     count(if(fail=1,true,null)) as fail1,
@@ -358,7 +409,7 @@
     where grade>=2006
     group by grade;
   </select>
-  <select id="countFailById" resultType="java.util.Map">
+  <select id="countFailById" resultType="java.util.LinkedHashMap">
     select s.grade,
     count(if(s.fail=0,true,null)) as fail0,
     count(if(s.fail=1,true,null)) as fail1,
@@ -370,7 +421,7 @@
     and s.grade>=2006
     group by s.grade;
   </select>
-  <select id="sumFail" resultType="java.util.Map">
+  <select id="sumFail" resultType="java.util.LinkedHashMap">
     select
     count(if(fail=0,true,null)) as fail0,
     count(if(fail=1,true,null)) as fail1,
@@ -379,7 +430,7 @@
     from scoreanalysis.student
     where grade>=2006;
   </select>
-  <select id="sumFailById" resultType="java.util.Map">
+  <select id="sumFailById" resultType="java.util.LinkedHashMap">
     select
     count(if(s.fail=0,true,null)) as fail0,
     count(if(s.fail=1,true,null)) as fail1,
@@ -395,8 +446,29 @@
     where fail = #{fail,jdbcType=INTEGER}
     and grade != 0;
   </select>
+  <select id="countFail_counselor" resultType="java.util.LinkedHashMap">
+    select
+    count(if(s.fail=0,true,null)) as fail0,
+    count(if(s.fail=1,true,null)) as fail1,
+    count(if(s.fail=2,true,null)) as fail2,
+    count(if(s.fail=3,true,null)) as fail3
+    from scoreanalysis.student as s, class as c
+    where s.classId=c.classId
+    and c.counselorId=#{counselorId,jdbcType=VARCHAR};
+  </select>
+  <select id="countFailById_counselor" resultType="java.util.LinkedHashMap">
+    select
+    count(if(s.fail=0,true,null)) as fail0,
+    count(if(s.fail=1,true,null)) as fail1,
+    count(if(s.fail=2,true,null)) as fail2,
+    count(if(s.fail=3,true,null)) as fail3
+    from scoreanalysis.student as s, class as c
+    where s.classId=c.classId
+    and c.classId=#{classId,jdbcType=VARCHAR}
+  </select>
 
 
+<!--totalrecord教务员-->
   <select id="sumStudentByGrindAndGrade" resultType="java.lang.Integer">
     select count(*) from scoreanalysis.student
     where grind = #{grind,jdbcType=INTEGER}
@@ -423,10 +495,38 @@
     and s.grade = #{grade,jdbcType=CHAR}
     and (c.collegeId=#{id,jdbcType=VARCHAR} or c.majorId=#{id,jdbcType=VARCHAR});
   </select>
+  <!--totalrecord辅导员-->
+  <select id="sumStudentByGrind_counselor" resultType="java.lang.Integer">
+    select count(*)
+    from scoreanalysis.student as s,scoreanalysis.class as c
+    where s.classId=c.classId
+    and s.grind = #{grind,jdbcType=INTEGER}
+    and c.counselorId = #{counselorId,jdbcType=VARCHAR};
+  </select>
+  <select id="sumStudentByFail_counselor" resultType="java.lang.Integer">
+    select count(*)
+    from scoreanalysis.student as s,scoreanalysis.class as c
+    where s.classId=c.classId
+    and s.fail = #{fail,jdbcType=INTEGER}
+    and c.counselorId = #{counselorId,jdbcType=VARCHAR};
+  </select>
+  <select id="sumStudentByGrindAndId_counselor" resultType="java.lang.Integer">
+    select count(*)
+    from scoreanalysis.student as s,scoreanalysis.class as c
+    where s.classId=c.classId
+    and s.grind = #{grind,jdbcType=INTEGER}
+    and c.classId=#{classId,jdbcType=VARCHAR};
+  </select>
+  <select id="sumStudentByFailAndId_counselor" resultType="java.lang.Integer">
+    select count(*)
+    from scoreanalysis.student as s,scoreanalysis.class as c
+    where s.classId=c.classId
+    and s.fail = #{fail,jdbcType=INTEGER}
+    and c.classId=#{classId,jdbcType=VARCHAR};
+  </select>
 
 
-
-
+<!--学生列表-教务员-->
   <select id="getGrindStudentDataByPage" resultType="bupt.sse.SmartCampus.model.Student">
   select * from scoreanalysis.student
   where grind = #{grind,jdbcType=INTEGER} and grade =#{grade,jdbcType=CHAR}
@@ -474,6 +574,58 @@
   limit #{rowNum,jdbcType=INTEGER},#{pageSize,jdbcType=INTEGER};
   </select>
 
+    <!--学生列表-辅导员-->
+    <select id="getGrindStudentDataByPage_counselor" resultType="bupt.sse.SmartCampus.model.Student">
+  select *
+  from scoreanalysis.student as s,scoreanalysis.class as c
+  where s.classId=c.classId
+  and s.grind = #{grind,jdbcType=INTEGER}
+  and c.counselorId =#{counselorId,jdbcType=VARCHAR}
+  limit #{rowNum,jdbcType=INTEGER},#{pageSize,jdbcType=INTEGER};
+  </select>
+    <select id="getFailStudentDataByPage_counselor" resultType="bupt.sse.SmartCampus.model.Student">
+  select *
+  from scoreanalysis.student as s,scoreanalysis.class as c
+  where s.classId=c.classId
+  and s.fail = #{fail,jdbcType=INTEGER}
+  and c.counselorId =#{counselorId,jdbcType=VARCHAR}
+  limit #{rowNum,jdbcType=INTEGER},#{pageSize,jdbcType=INTEGER};
+  </select>
+    <select id="getAscendStudentDataByPage_counselor" resultType="bupt.sse.SmartCampus.model.Student">
+  select s.*
+  from scoreanalysis.student as s,scoreanalysis.studentstudy as ss,scoreanalysis.class as c
+  where s.studentId=ss.studentId and s.classId=c.classId
+  and ss.ascend = #{ascend,jdbcType=INTEGER}
+  and c.counselorId =#{counselorId,jdbcType=VARCHAR}
+  and ss.year like #{year,jdbcType=VARCHAR}
+  limit #{rowNum,jdbcType=INTEGER},#{pageSize,jdbcType=INTEGER};
+  </select>
+
+    <select id="getGrindStudentDataByPageAndId_counselor" resultType="bupt.sse.SmartCampus.model.Student">
+  select s.*
+  from scoreanalysis.student as s,scoreanalysis.class as c
+  where s.classId=c.classId
+  and s.grind = #{grind,jdbcType=INTEGER}
+  and c.classId=#{classId,jdbcType=VARCHAR}
+  limit #{rowNum,jdbcType=INTEGER},#{pageSize,jdbcType=INTEGER};
+  </select>
+    <select id="getFailStudentDataByPageAndId_counselor" resultType="bupt.sse.SmartCampus.model.Student">
+  select s.*
+  from scoreanalysis.student as s,scoreanalysis.class as c
+  where s.classId=c.classId
+  and s.fail = #{fail,jdbcType=INTEGER}
+  and c.classId=#{classId,jdbcType=VARCHAR}
+  limit #{rowNum,jdbcType=INTEGER},#{pageSize,jdbcType=INTEGER};
+  </select>
+    <select id="getAscendStudentDataByPageAndId_counselor" resultType="bupt.sse.SmartCampus.model.Student">
+  select s.*
+  from scoreanalysis.student as s,scoreanalysis.studentstudy as ss,scoreanalysis.class as c
+  where s.studentId=ss.studentId and s.classId=c.classId
+  and ss.ascend = #{ascend,jdbcType=INTEGER}
+  and ss.year like #{year,jdbcType=VARCHAR}
+  and c.classId=#{classId,jdbcType=VARCHAR}
+  limit #{rowNum,jdbcType=INTEGER},#{pageSize,jdbcType=INTEGER};
+  </select>
 
 
   <select id="getStudentDataByStudentId" resultType="bupt.sse.SmartCampus.model.Student">
@@ -523,6 +675,45 @@
     and
     <if test="grade!=null">
       s.grade like #{grade,jdbcType=VARCHAR}
+    </if>
+    and
+    <if test="studentId!=null">
+      s.studentId like #{studentId,jdbcType=VARCHAR}
+    </if>
+    and
+    <if test="studentName!=null">
+      s.studentName like #{studentName,jdbcType=VARCHAR}
+    </if>
+  </select>
+
+  <select id="selectStudentDataByClassOrStudent_counselor" resultType="java.util.Map">
+    select co.collegeName,co.majorName,s.grade,s.classId,s.studentId,s.studentName
+    from student as s,class as cl,college as co
+    where s.classId=cl.classId and cl.majorId=co.majorId
+    and cl.counselorId=#{counselorId,jdbcType=VARCHAR}
+    and
+    <if test="classId!=null">
+      s.classId like #{classId,jdbcType=VARCHAR}
+    </if>
+    and
+    <if test="studentId!=null">
+      s.studentId like #{studentId,jdbcType=VARCHAR}
+    </if>
+    and
+    <if test="studentName!=null">
+      s.studentName like #{studentName,jdbcType=VARCHAR}
+    </if>
+    limit #{rowNum,jdbcType=INTEGER},#{pageSize,jdbcType=INTEGER};
+  </select>
+
+  <select id="selectStudentSumByClassOrStudent_counselor" resultType="java.lang.Integer">
+    select count(*)
+    from student as s,class as cl,college as co
+    where s.classId=cl.classId and cl.majorId=co.majorId
+      and cl.counselorId=#{counselorId,jdbcType=VARCHAR}
+    and
+    <if test="classId!=null">
+      s.classId like #{classId,jdbcType=VARCHAR}
     </if>
     and
     <if test="studentId!=null">

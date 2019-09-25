@@ -291,63 +291,63 @@
                                     <tbody>
                                     <tr>
                                         <td>
-                                            <i class=" icon-tasks"></i>
+                                            <i class=" icon-building"></i>
                                         </td>
                                         <td>学院</td>
                                         <td id="curCollege"></td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <i class=" icon-tasks"></i>
+                                            <i class=" icon-group"></i>
                                         </td>
                                         <td>专业</td>
                                         <td id="curMajor"></td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <i class=" icon-tasks"></i>
+                                            <i class=" icon-bookmark"></i>
                                         </td>
                                         <td>年级</td>
                                         <td id="curGrade"></td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <i class="icon-warning-sign"></i>
+                                            <i class="icon-sitemap"></i>
                                         </td>
                                         <td>班级</td>
                                         <td id="curClassId"></td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <i class="icon-warning-sign"></i>
+                                            <i class=" icon-certificate"></i>
                                         </td>
                                         <td>学号</td>
                                         <td id="curStudentId"></td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <i class="icon-envelope"></i>
+                                            <i class=" icon-star"></i>
                                         </td>
                                         <td>平均加权成绩</td>
                                         <td id="curWeightScore"></td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <i class="icon-envelope"></i>
+                                            <i class=" icon-sort-by-attributes"></i>
                                         </td>
                                         <td>平均排名</td>
                                         <td id="curStudentRank"></td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <i class=" icon-bell-alt"></i>
+                                            <i class="icon-exclamation-sign"></i>
                                         </td>
                                         <td>挂科数目</td>
                                         <td id="curFailureNum"></td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <i class=" icon-bell-alt"></i>
+                                            <i class="icon-warning-sign"></i>
                                         </td>
                                         <td>挂科学分</td>
                                         <td id="curFailureCredit"></td>
@@ -446,7 +446,7 @@
 <script type="text/javascript">
     // 学生类型数据
     var grind_data,grind_percent;
-    var studentType=['学霸', '学习普通', '学渣'];
+    var studentType=['学习优秀', '学习普通', '学习困难'];
     // 学业困难数据
     var fail_data,fail_percent;
     var failType=['无挂科(0)', '有挂科(<10)', '有留级风险(<20)','有退学风险(<30)'];
@@ -459,8 +459,8 @@
     $(document).ready(function (e) {
 
         // 标签云
-        var labelText=['学霸','学习普通','学渣','无挂科','有挂科','有留级风险','有退学风险','成绩上升','成绩稳定','成绩下降'];
-        var labelWeight=['19','15','11','10','16','18','12','13','17','14'];
+        var labelText=['学习优秀','学习普通','学习困难','无挂科','有挂科','有留级风险','有退学风险','成绩上升','成绩稳定','成绩下降'];
+        var labelWeight=['10','9','10.5','8','11','12','13','11','10','12'];
         var i;
         var obj;
         var array = new Array();
@@ -469,11 +469,11 @@
             obj.text = labelText[i];
             obj.weight = labelWeight[i];
             if (i===0){
-                obj.handlers = {click: function () {getGraphDataByLabelAndId('学霸','all');selectNewLabel();}}
+                obj.handlers = {click: function () {getGraphDataByLabelAndId('学习优秀','all');selectNewLabel();}}
             } else if (i===1){
                 obj.handlers = {click: function () {getGraphDataByLabelAndId('学习普通','all');selectNewLabel();}}
             } else if (i===2){
-                obj.handlers = {click: function () {getGraphDataByLabelAndId('学渣','all');selectNewLabel();}}
+                obj.handlers = {click: function () {getGraphDataByLabelAndId('学习困难','all');selectNewLabel();}}
             } else if (i===3){
                 obj.handlers = {click: function () {getGraphDataByLabelAndId('无挂科','all');selectNewLabel();}}
             } else if (i===4){
@@ -496,7 +496,7 @@
             removeOverflowing: true,
             shape: "elliptic",
             // width:550,
-            height: 150
+            height: 200
         });
 
         // $('#myTab a').click(function (e) {
@@ -725,7 +725,7 @@
                         for(var i=0;i<=2;i++){
                             grind_percent.push({
                                 label:studentType[i],
-                                value: grindPercent[2-i]
+                                value: grindPercent[i]
                             });
                         }
                     }else if (ascendType.includes(label)){
@@ -738,7 +738,7 @@
                         for(var i=0;i<=2;i++){
                             ascend_percent.push({
                                 label:ascendType[i],
-                                value: ascendPercent[2-i]
+                                value: ascendPercent[i]
                             });
                         }
                         yearflag=1;
@@ -752,7 +752,7 @@
                         for(var i=0;i<=3;i++){
                             fail_percent.push({
                                 label:failType[i],
-                                value: failPercent[3-i]
+                                value: failPercent[i]
                             });
                         }
                     }
@@ -813,8 +813,8 @@
         document.getElementById("part_of_graph").style.display="block";
         if(studentType.includes(label)){
             var index=studentType.indexOf(label);
-            var colors=['#FF0000', '#66CD00', '#1874CD'];//深虹绿蓝
-            var lineColors=['#F08080', '#B4EEB4', '#B0E2FF'];//浅
+            var colors=['#1874CD', '#66CD00', '#FF0000'];//深蓝绿红
+            var lineColors=[ '#B0E2FF','#B4EEB4', '#F08080'];//浅
             // var colors=['#4a8bc2', '#a9d86e', '#ff6c60'];//蓝绿红
             // var lineColors=['#AAAAAA','#AAAAAA','#AAAAAA'];//灰
             lineColors[index]=colors[index];
@@ -844,8 +844,8 @@
         else if(ascendType.includes(label)){
 
             var index=ascendType.indexOf(label);
-            var colors=['#FF0000', '#66CD00', '#1874CD'];//深虹绿蓝
-            var lineColors=['#F08080', '#B4EEB4', '#B0E2FF'];//浅
+            var colors=['#1874CD', '#66CD00', '#FF0000'];//深蓝绿红
+            var lineColors=[ '#B0E2FF','#B4EEB4', '#F08080'];//浅
             lineColors[index]=colors[index];
             Morris.Area({
                 element: 'graph_line',
@@ -861,6 +861,7 @@
                 pointSize: 5,
                 lineColors:lineColors,
                 fillOpacity: 0.5,
+                parseTime:false,
                 smooth: true
             });
             Morris.Donut({
@@ -873,8 +874,8 @@
         else{
 
             var index=failType2.indexOf(label);
-            var colors=['#FF0000', '#EEC900','#1874CD', '#66CD00'];//深蓝绿红
-            var lineColors=['#F08080','#FFEC8B','#B0E2FF', '#B4EEB4'];//浅
+            var colors=['#66CD00','#1874CD','#EEC900','#FF0000' ];//深绿蓝黄红
+            var lineColors=['#B4EEB4','#B0E2FF' ,'#FFEC8B','#F08080'];//浅
             lineColors[index]=colors[index];
             Morris.Area({
                 element: 'graph_line',
@@ -1013,7 +1014,7 @@
                     param.pageNum=pageNum;
                     param.draw=draw;
                     return param;
-                    // param.append("label","学霸");
+                    // param.append("label","学习优秀");
                     // param.append("pageNum",pageNum);
                     // param.append("draw",draw);
                     // return param;

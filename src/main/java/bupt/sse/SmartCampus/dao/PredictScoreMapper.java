@@ -30,4 +30,7 @@ public interface PredictScoreMapper {
 
     int updateByPrimaryKey(PredictScore record);
 
+    Float selectCollegePredictPercentage(@Param("currentGrade")int currentGrade,@Param("collegename") String collegeName);
+
+    Float selectPredictPercentage(@Param("currentGrade")int currentGrade);
 }

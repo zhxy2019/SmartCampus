@@ -55460,9 +55460,9 @@ extendChartView({
                         data.setItemLayout(idx, el.position);
                     }
                 }, this).on('dragend', function () {
-                    if (forceLayout) {
-                        forceLayout.setUnfixed(idx);
-                    }
+                    // if (forceLayout) {
+                    //     forceLayout.setUnfixed(idx);
+                    // }
                 }, this);
             }
             el.setDraggable(draggable && forceLayout);

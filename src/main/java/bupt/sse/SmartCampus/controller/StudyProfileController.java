@@ -244,7 +244,7 @@ public class StudyProfileController {
             Student curStudent=studentService.getStudentDataByStudentId(studentId);
             College curClass=collegeService.getCollegeDataByStudentId(studentId);
             List<StudentStudy> curStudentStudyList=studentStudyService.getStudentStudyDataByStudentId(studentId);
-            String[] studyLabels={"学霸","学习普通","学渣","无挂科","有挂科","有留级风险","有退学风险","成绩上升","成绩稳定","成绩下降"};
+            String[] studyLabels={"学习优秀","学习普通","学习困难","无挂科","有挂科","有留级风险","有退学风险","成绩上升","成绩稳定","成绩下降"};
             List<String> curStudentLabels=new ArrayList<>();
             if (curStudent!=null){
                 curStudentLabels.add(studyLabels[curStudent.getGrind()]);

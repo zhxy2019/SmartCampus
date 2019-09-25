@@ -43,4 +43,6 @@ public interface StudentService {
     Map<String, List> getCollegeFailPercentage(Integer currentGrade);
 
     List<Student> getPredictStudentList(String collegeName, int currentGrade);
+
+    Float getCollegePredictPercentage(int currentGrade, String collegeName);
 }

@@ -208,4 +208,8 @@
       counselorId = #{counselorid,jdbcType=VARCHAR}
     where classId = #{classid,jdbcType=VARCHAR}
   </update>
+
+  <select id="selectClassIdByCounselorId" resultType="java.lang.Integer">
+    select classId from class where counselorId = #{counselorId,jdbcType=VARCHAR};
+  </select>
 </mapper>

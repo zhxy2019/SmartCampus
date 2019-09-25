@@ -2,12 +2,14 @@ package bupt.sse.SmartCampus.controller;
 
 import bupt.sse.SmartCampus.service.StudentService;
 import bupt.sse.SmartCampus.utils.Message;
+import org.apache.ibatis.jdbc.Null;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.Calendar;
 import java.util.Map;
 
 @Controller
@@ -129,4 +131,16 @@ public class AdminController {
 
     //=======================================================
 
+    //获取点击的学生的所有标签
+    @RequestMapping(value = "/getStudentLabel",method = RequestMethod.POST)
+    @ResponseBody
+    public Message getStudentLabel(@RequestParam("studentId") String studentId){
+        return mainController.getStudentLabel_admin(studentId);
+    }
+    //获取首页挂科告警百分比
+    @RequestMapping(value = "/getAlertPercentage",method = RequestMethod.POST)
+    @ResponseBody
+    public Message getAlertPercentage(@RequestParam("collegeName") String collegeName){
+        return mainController.getAlertPercentage_admin(collegeName);
+    }
 }
