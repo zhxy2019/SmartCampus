@@ -15,12 +15,18 @@ public interface StudentService {
 
     List<Map> getCountDataByLabelAndId(String label,String id);
     Map getSumDataByLabelAndId(String label,String id);
-
+    //Yu
+    Integer getStudentBehaviorSumByLabelAndGradeAndId(String Label,String grade,String id);
+    List<Student> getStudentBehaviorPageDataByLabelAndGradeAndId(String label,String grade,String id,Integer pageNum,Integer pageSize);
+    List<Map> getBehaviorCountDataByLabelAndId(String label,String id);
+    Map getBehaviorSumDataByLabelAndId(String label,String id);
 
     Student getStudentDataByStudentId(String studentId);
 
     //辅助函数
     Integer getIndex(String label);
+    //辅助函数
+    Integer getIndex1(String label);
 
     long getStudentSumInSchool(int currentGrade);
 

@@ -35,13 +35,13 @@ public class StudentBehavior {
 
     private Integer countSleeplate;
 
-    private Integer breakfastlabel;
+    private Integer breakfastLabel;
 
-    private Integer meallabel;
+    private Integer mealLabel;
 
-    private Integer consumptionlabel;
+    private Integer consumptionLabel;
 
-    private Integer sleeplatelabel;
+    private Integer sleeplateLabel;
 
     public Integer getId() {
         return id;
@@ -179,35 +179,35 @@ public class StudentBehavior {
         this.countSleeplate = countSleeplate;
     }
 
-    public Integer getBreakfastlabel() {
-        return breakfastlabel;
+    public Integer getBreakfastLabel() {
+        return breakfastLabel;
     }
 
-    public void setBreakfastlabel(Integer breakfastlabel) {
-        this.breakfastlabel = breakfastlabel;
+    public void setBreakfastLabel(Integer breakfastLabel) {
+        this.breakfastLabel = breakfastLabel;
     }
 
-    public Integer getMeallabel() {
-        return meallabel;
+    public Integer getMealLabel() {
+        return mealLabel;
     }
 
-    public void setMeallabel(Integer meallabel) {
-        this.meallabel = meallabel;
+    public void setMealLabel(Integer mealLabel) {
+        this.mealLabel = mealLabel;
     }
 
-    public Integer getConsumptionlabel() {
-        return consumptionlabel;
+    public Integer getConsumptionLabel() {
+        return consumptionLabel;
     }
 
-    public void setConsumptionlabel(Integer consumptionlabel) {
-        this.consumptionlabel = consumptionlabel;
+    public void setConsumptionLabel(Integer consumptionLabel) {
+        this.consumptionLabel = consumptionLabel;
     }
 
-    public Integer getSleeplatelabel() {
-        return sleeplatelabel;
+    public Integer getSleeplateLabel() {
+        return sleeplateLabel;
     }
 
-    public void setSleeplatelabel(Integer sleeplatelabel) {
-        this.sleeplatelabel = sleeplatelabel;
+    public void setSleeplateLabel(Integer sleeplateLabel) {
+        this.sleeplateLabel = sleeplateLabel;
     }
 }

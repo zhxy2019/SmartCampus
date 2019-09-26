@@ -92,7 +92,7 @@
                 </li>
 
                 <li>
-                    <a href="javascript:;">
+                    <a href="consumption/">
                         <i class="icon-shopping-cart"></i>
                         <span>消费画像</span>
                     </a>

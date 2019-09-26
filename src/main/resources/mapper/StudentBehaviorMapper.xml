@@ -19,10 +19,10 @@
     <result column="sum_meal" jdbcType="INTEGER" property="sumMeal" />
     <result column="sum_market" jdbcType="INTEGER" property="sumMarket" />
     <result column="count_sleeplate" jdbcType="INTEGER" property="countSleeplate" />
-    <result column="breakfastLabel" jdbcType="INTEGER" property="breakfastlabel" />
-    <result column="mealLabel" jdbcType="INTEGER" property="meallabel" />
-    <result column="consumptionLabel" jdbcType="INTEGER" property="consumptionlabel" />
-    <result column="sleeplateLabel" jdbcType="INTEGER" property="sleeplatelabel" />
+    <result column="breakfastLabel" jdbcType="INTEGER" property="breakfastLabel" />
+    <result column="mealLabel" jdbcType="INTEGER" property="mealLabel" />
+    <result column="consumptionLabel" jdbcType="INTEGER" property="consumptionLabel" />
+    <result column="sleeplateLabel" jdbcType="INTEGER" property="sleeplateLabel" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -131,8 +131,8 @@
       #{sumBreakfast,jdbcType=INTEGER}, #{countLunch,jdbcType=INTEGER}, #{meanLunch,jdbcType=INTEGER}, 
       #{sumLunch,jdbcType=INTEGER}, #{countDinner,jdbcType=INTEGER}, #{meanDinner,jdbcType=INTEGER}, 
       #{sumDinner,jdbcType=INTEGER}, #{countMeal,jdbcType=INTEGER}, #{sumMeal,jdbcType=INTEGER}, 
-      #{sumMarket,jdbcType=INTEGER}, #{countSleeplate,jdbcType=INTEGER}, #{breakfastlabel,jdbcType=INTEGER}, 
-      #{meallabel,jdbcType=INTEGER}, #{consumptionlabel,jdbcType=INTEGER}, #{sleeplatelabel,jdbcType=INTEGER}
+      #{sumMarket,jdbcType=INTEGER}, #{countSleeplate,jdbcType=INTEGER}, #{breakfastLabel,jdbcType=INTEGER},
+      #{mealLabel,jdbcType=INTEGER}, #{consumptionLabel,jdbcType=INTEGER}, #{sleeplateLabel,jdbcType=INTEGER}
       )
   </insert>
   <insert id="insertSelective" parameterType="bupt.sse.SmartCampus.model.StudentBehavior">
@@ -189,16 +189,16 @@
       <if test="countSleeplate != null">
         count_sleeplate,
       </if>
-      <if test="breakfastlabel != null">
+      <if test="breakfastLabel != null">
         breakfastLabel,
       </if>
-      <if test="meallabel != null">
+      <if test="mealLabel != null">
         mealLabel,
       </if>
-      <if test="consumptionlabel != null">
+      <if test="consumptionLabel != null">
         consumptionLabel,
       </if>
-      <if test="sleeplatelabel != null">
+      <if test="sleeplateLabel != null">
         sleeplateLabel,
       </if>
     </trim>
@@ -254,17 +254,17 @@
       <if test="countSleeplate != null">
         #{countSleeplate,jdbcType=INTEGER},
       </if>
-      <if test="breakfastlabel != null">
-        #{breakfastlabel,jdbcType=INTEGER},
+      <if test="breakfastLabel != null">
+        #{breakfastLabel,jdbcType=INTEGER},
       </if>
-      <if test="meallabel != null">
-        #{meallabel,jdbcType=INTEGER},
+      <if test="mealLabel != null">
+        #{mealLabel,jdbcType=INTEGER},
       </if>
-      <if test="consumptionlabel != null">
-        #{consumptionlabel,jdbcType=INTEGER},
+      <if test="consumptionLabel != null">
+        #{consumptionLabel,jdbcType=INTEGER},
       </if>
-      <if test="sleeplatelabel != null">
-        #{sleeplatelabel,jdbcType=INTEGER},
+      <if test="sleeplateLabel != null">
+        #{sleeplateLabel,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -328,17 +328,17 @@
       <if test="record.countSleeplate != null">
         count_sleeplate = #{record.countSleeplate,jdbcType=INTEGER},
       </if>
-      <if test="record.breakfastlabel != null">
-        breakfastLabel = #{record.breakfastlabel,jdbcType=INTEGER},
+      <if test="record.breakfastLabel != null">
+        breakfastLabel = #{record.breakfastLabel,jdbcType=INTEGER},
       </if>
-      <if test="record.meallabel != null">
-        mealLabel = #{record.meallabel,jdbcType=INTEGER},
+      <if test="record.mealLabel != null">
+        mealLabel = #{record.mealLabel,jdbcType=INTEGER},
       </if>
-      <if test="record.consumptionlabel != null">
-        consumptionLabel = #{record.consumptionlabel,jdbcType=INTEGER},
+      <if test="record.consumptionLabel != null">
+        consumptionLabel = #{record.consumptionLabel,jdbcType=INTEGER},
       </if>
-      <if test="record.sleeplatelabel != null">
-        sleeplateLabel = #{record.sleeplatelabel,jdbcType=INTEGER},
+      <if test="record.sleeplateLabel != null">
+        sleeplateLabel = #{record.sleeplateLabel,jdbcType=INTEGER},
       </if>
     </set>
     <if test="_parameter != null">
@@ -364,10 +364,10 @@
       sum_meal = #{record.sumMeal,jdbcType=INTEGER},
       sum_market = #{record.sumMarket,jdbcType=INTEGER},
       count_sleeplate = #{record.countSleeplate,jdbcType=INTEGER},
-      breakfastLabel = #{record.breakfastlabel,jdbcType=INTEGER},
-      mealLabel = #{record.meallabel,jdbcType=INTEGER},
-      consumptionLabel = #{record.consumptionlabel,jdbcType=INTEGER},
-      sleeplateLabel = #{record.sleeplatelabel,jdbcType=INTEGER}
+      breakfastLabel = #{record.breakfastLabel,jdbcType=INTEGER},
+      mealLabel = #{record.mealLabel,jdbcType=INTEGER},
+      consumptionLabel = #{record.consumptionLabel,jdbcType=INTEGER},
+      sleeplateLabel = #{record.sleeplateLabel,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -423,17 +423,17 @@
       <if test="countSleeplate != null">
         count_sleeplate = #{countSleeplate,jdbcType=INTEGER},
       </if>
-      <if test="breakfastlabel != null">
-        breakfastLabel = #{breakfastlabel,jdbcType=INTEGER},
+      <if test="breakfastLabel != null">
+        breakfastLabel = #{breakfastLabel,jdbcType=INTEGER},
       </if>
-      <if test="meallabel != null">
+      <if test="mealLabel != null">
         mealLabel = #{meallabel,jdbcType=INTEGER},
       </if>
-      <if test="consumptionlabel != null">
-        consumptionLabel = #{consumptionlabel,jdbcType=INTEGER},
+      <if test="consumptionLabel != null">
+        consumptionLabel = #{consumptionLabel,jdbcType=INTEGER},
       </if>
-      <if test="sleeplatelabel != null">
-        sleeplateLabel = #{sleeplatelabel,jdbcType=INTEGER},
+      <if test="sleeplateLabel != null">
+        sleeplateLabel = #{sleeplateLabel,jdbcType=INTEGER},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -456,10 +456,256 @@
       sum_meal = #{sumMeal,jdbcType=INTEGER},
       sum_market = #{sumMarket,jdbcType=INTEGER},
       count_sleeplate = #{countSleeplate,jdbcType=INTEGER},
-      breakfastLabel = #{breakfastlabel,jdbcType=INTEGER},
-      mealLabel = #{meallabel,jdbcType=INTEGER},
-      consumptionLabel = #{consumptionlabel,jdbcType=INTEGER},
-      sleeplateLabel = #{sleeplatelabel,jdbcType=INTEGER}
+      breakfastLabel = #{breakfastLabel,jdbcType=INTEGER},
+      mealLabel = #{mealLabel,jdbcType=INTEGER},
+      consumptionLabel = #{consumptionLabel,jdbcType=INTEGER},
+      sleeplateLabel = #{sleeplateLabel,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="countBreakfast" resultType="java.util.LinkedHashMap">
+    select year,
+    count(if(breakfastLabel=0,true,null)) as breakfastLabel0,
+    count(if(breakfastLabel=1,true,null)) as breakfastLabel1
+    from scoreanalysis.studentbehavior
+    where year>=2015
+    group by year;
+  </select>
+  <select id="countBreakfastById" resultType="java.util.LinkedHashMap">
+    select ss.year,
+    count(if(ss.breakfastLabel=0,true,null)) as breakfastLabel0,
+    count(if(ss.breakfastLabel=1,true,null)) as breakfastLabel1
+    from scoreanalysis.studentbehavior ss , scoreanalysis.class c ,scoreanalysis.student s
+    where s.classId=c.classId and s.studentId=ss.studentId
+    and (c.collegeId=#{id,jdbcType=VARCHAR} or c.majorId=#{id,jdbcType=VARCHAR})
+    and ss.year>=2015
+    group by ss.year;
+  </select>
+  <select id="sumBreakfast" resultType="java.util.LinkedHashMap">
+    select
+    count(if(breakfastLabel=0,true,null)) as breakfastLabel0,
+    count(if(breakfastLabel=1,true,null)) as breakfastLabel1
+    from scoreanalysis.studentbehavior
+    where year>=2015;
+  </select>
+  <select id="sumBreakfastById" resultType="java.util.LinkedHashMap">
+    select
+    count(if(ss.breakfastLabel=0,true,null)) as breakfastLabel0,
+    count(if(ss.breakfastLabel=1,true,null)) as breakfastLabel1
+    from scoreanalysis.studentbehavior ss , scoreanalysis.class c ,scoreanalysis.student s
+    where s.classId=c.classId and s.studentId=ss.studentId
+    and (c.collegeId=#{id,jdbcType=VARCHAR} or c.majorId=#{id,jdbcType=VARCHAR})
+    and ss.year>=2015;
+  </select>
+  <select id="sumStudentByBreakfast" resultType="java.util.LinkedHashMap">
+    select count(*) from (
+    select distinct studentId,breakfastLabel from scoreanalysis.studentbehavior) ass
+    where breakfastLabel = #{breakfastLabel,jdbcType=INTEGER};
+  </select>
+
+
+
+  <select id="sumStudentByBreakfastAndYear" resultType="java.lang.Integer">
+    select count(*)
+    from scoreanalysis.studentbehavior as ss ,scoreanalysis.student as s
+    where s.studentId=ss.studentId
+    and ss.year like #{year,jdbcType=VARCHAR}
+    and ss.breakfastLabel = #{breakfastLabel,jdbcType=INTEGER};
+  </select>
+  <select id="sumStudentByBreakfastAndYearAndId" resultType="java.lang.Integer">
+    select count(*)
+    from scoreanalysis.studentbehavior as ss , scoreanalysis.class as c ,scoreanalysis.student as s
+    where s.classId=c.classId and s.studentId=ss.studentId
+    and ss.year like #{year,jdbcType=VARCHAR}
+    and ss.breakfastLabel = #{breakfastLabel,jdbcType=INTEGER}
+    and (c.collegeId=#{id,jdbcType=VARCHAR} or c.majorId=#{id,jdbcType=VARCHAR});
+  </select>
+
+  <select id="countConsumption" resultType="java.util.LinkedHashMap">
+    select year,
+    count(if(consumptionLabel=0,true,null)) as consumptionLabel0,
+    count(if(consumptionLabel=1,true,null)) as consumptionLabel1,
+    count(if(consumptionLabel=2,true,null)) as consumptionLabel2,
+    count(if(consumptionLabel=3,true,null)) as consumptionLabel3,
+    count(if(consumptionLabel=4,true,null)) as consumptionLabel4
+    from scoreanalysis.studentbehavior
+    where year>=2015
+    group by year;
+  </select>
+  <select id="countConsumptionById" resultType="java.util.LinkedHashMap">
+    select ss.year,
+    count(if(ss.consumptionLabel=0,true,null)) as consumptionLabel0,
+    count(if(ss.consumptionLabel=1,true,null)) as consumptionLabel1,
+    count(if(ss.consumptionLabel=2,true,null)) as consumptionLabel2,
+    count(if(ss.consumptionLabel=3,true,null)) as consumptionLabel3,
+    count(if(ss.consumptionLabel=4,true,null)) as consumptionLabel4
+    from scoreanalysis.studentbehavior ss , scoreanalysis.class c ,scoreanalysis.student s
+    where s.classId=c.classId and s.studentId=ss.studentId
+    and (c.collegeId=#{id,jdbcType=VARCHAR} or c.majorId=#{id,jdbcType=VARCHAR})
+    and ss.year>=2015
+    group by ss.year;
+  </select>
+  <select id="sumConsumption" resultType="java.util.LinkedHashMap">
+    select
+    count(if(consumptionLabel=0,true,null)) as consumptionLabel0,
+    count(if(consumptionLabel=1,true,null)) as consumptionLabel1,
+    count(if(consumptionLabel=2,true,null)) as consumptionLabel2,
+    count(if(consumptionLabel=3,true,null)) as consumptionLabel3,
+    count(if(consumptionLabel=4,true,null)) as consumptionLabel4
+    from scoreanalysis.studentbehavior
+    where year>=2015;
+  </select>
+  <select id="sumConsumptionById" resultType="java.util.LinkedHashMap">
+    select
+    count(if(ss.consumptionLabel=0,true,null)) as consumptionLabel0,
+    count(if(ss.consumptionLabel=1,true,null)) as consumptionLabel1,
+    count(if(ss.consumptionLabel=2,true,null)) as consumptionLabel2,
+    count(if(ss.consumptionLabel=3,true,null)) as consumptionLabel3,
+    count(if(ss.consumptionLabel=4,true,null)) as consumptionLabel4
+    from scoreanalysis.studentbehavior ss , scoreanalysis.class c ,scoreanalysis.student s
+    where s.classId=c.classId and s.studentId=ss.studentId
+    and (c.collegeId=#{id,jdbcType=VARCHAR} or c.majorId=#{id,jdbcType=VARCHAR})
+    and ss.year>=2015;
+  </select>
+  <select id="sumStudentByConsumption" resultType="java.util.LinkedHashMap">
+    select count(*) from (
+    select distinct studentId,consumptionLabel from scoreanalysis.studentbehavior) ass
+    where consumptionLabel = #{consumptionLabel,jdbcType=INTEGER};
+  </select>
+  <select id="sumStudentByConsumptionAndYear" resultType="java.lang.Integer">
+    select count(*)
+    from scoreanalysis.studentbehavior as ss ,scoreanalysis.student as s
+    where s.studentId=ss.studentId
+    and ss.year like #{year,jdbcType=VARCHAR}
+    and ss.consumptionLabel = #{consumptionLabel,jdbcType=INTEGER};
+  </select>
+  <select id="sumStudentByConsumptionAndYearAndId" resultType="java.lang.Integer">
+    select count(*)
+    from scoreanalysis.studentbehavior as ss , scoreanalysis.class as c ,scoreanalysis.student as s
+    where s.classId=c.classId and s.studentId=ss.studentId
+    and ss.year like #{year,jdbcType=VARCHAR}
+    and ss.consumptionLabel = #{consumptionLabel,jdbcType=INTEGER}
+    and (c.collegeId=#{id,jdbcType=VARCHAR} or c.majorId=#{id,jdbcType=VARCHAR});
+  </select>
+
+  <select id="countMeal" resultType="java.util.LinkedHashMap">
+    select year,
+    count(if(mealLabel=0,true,null)) as mealLabel0,
+    count(if(mealLabel=1,true,null)) as mealLabel1,
+    count(if(mealLabel=2,true,null)) as mealLabel2
+    from scoreanalysis.studentbehavior
+    where year>=2015
+    group by year;
+  </select>
+  <select id="countMealById" resultType="java.util.LinkedHashMap">
+    select ss.year,
+    count(if(ss.mealLabel=0,true,null)) as mealLabel0,
+    count(if(ss.mealLabel=1,true,null)) as mealLabel1,
+    count(if(ss.mealLabel=2,true,null)) as mealLabel2
+    from scoreanalysis.studentbehavior ss , scoreanalysis.class c ,scoreanalysis.student s
+    where s.classId=c.classId and s.studentId=ss.studentId
+    and (c.collegeId=#{id,jdbcType=VARCHAR} or c.majorId=#{id,jdbcType=VARCHAR})
+    and ss.year>=2015
+    group by ss.year;
+  </select>
+  <select id="sumMeal" resultType="java.util.LinkedHashMap">
+    select
+    count(if(mealLabel=0,true,null)) as mealLabel0,
+    count(if(mealLabel=1,true,null)) as mealLabel1,
+    count(if(mealLabel=2,true,null)) as mealLabel2
+    from scoreanalysis.studentbehavior
+    where year>=2015;
+  </select>
+  <select id="sumMealById" resultType="java.util.LinkedHashMap">
+    select
+    count(if(ss.mealLabel=0,true,null)) as mealLabel0,
+    count(if(ss.mealLabel=1,true,null)) as mealLabel1,
+    count(if(ss.mealLabel=2,true,null)) as mealLabel2
+    from scoreanalysis.studentbehavior ss , scoreanalysis.class c ,scoreanalysis.student s
+    where s.classId=c.classId and s.studentId=ss.studentId
+    and (c.collegeId=#{id,jdbcType=VARCHAR} or c.majorId=#{id,jdbcType=VARCHAR})
+    and ss.year>=2015;
+  </select>
+  <select id="sumStudentByMeal" resultType="java.util.LinkedHashMap">
+    select count(*) from (
+    select distinct studentId,mealLabel from scoreanalysis.studentbehavior) ass
+    where mealLabel = #{mealLabel,jdbcType=INTEGER};
+  </select>
+  <select id="sumStudentByMealAndYear" resultType="java.lang.Integer">
+    select count(*)
+    from scoreanalysis.studentbehavior as ss ,scoreanalysis.student as s
+    where s.studentId=ss.studentId
+    and ss.year like #{year,jdbcType=VARCHAR}
+    and ss.mealLabel = #{mealLabel,jdbcType=INTEGER};
+  </select>
+  <select id="sumStudentByMealAndYearAndId" resultType="java.lang.Integer">
+    select count(*)
+    from scoreanalysis.studentbehavior as ss , scoreanalysis.class as c ,scoreanalysis.student as s
+    where s.classId=c.classId and s.studentId=ss.studentId
+    and ss.year like #{year,jdbcType=VARCHAR}
+    and ss.mealLabel = #{mealLabel,jdbcType=INTEGER}
+    and (c.collegeId=#{id,jdbcType=VARCHAR} or c.majorId=#{id,jdbcType=VARCHAR});
+  </select>
+
+  <select id="countSleeplate" resultType="java.util.LinkedHashMap">
+    select year,
+    count(if(sleeplateLabel=0,true,null)) as sleeplateLabel0,
+    count(if(sleeplateLabel=1,true,null)) as sleeplateLabel1
+    from scoreanalysis.studentbehavior
+    where year>=2015
+    group by year;
+  </select>
+  <select id="countSleeplateById" resultType="java.util.LinkedHashMap">
+    select ss.year,
+    count(if(ss.sleeplateLabel=0,true,null)) as sleeplateLabel0,
+    count(if(ss.sleeplateLabel=1,true,null)) as sleeplateLabel1
+    from scoreanalysis.studentbehavior ss , scoreanalysis.class c ,scoreanalysis.student s
+    where s.classId=c.classId and s.studentId=ss.studentId
+    and (c.collegeId=#{id,jdbcType=VARCHAR} or c.majorId=#{id,jdbcType=VARCHAR})
+    and ss.year>=2015
+    group by ss.year;
+  </select>
+  <select id="sumSleeplate" resultType="java.util.LinkedHashMap">
+    select
+    count(if(sleeplateLabel=0,true,null)) as sleeplateLabel0,
+    count(if(sleeplateLabel=1,true,null)) as sleeplateLabel1
+    from scoreanalysis.studentbehavior
+    where year>=2015;
+  </select>
+  <select id="sumSleeplateById" resultType="java.util.LinkedHashMap">
+    select
+    count(if(ss.sleeplateLabel=0,true,null)) as sleeplateLabel0,
+    count(if(ss.sleeplateLabel=1,true,null)) as sleeplateLabel1
+    from scoreanalysis.studentbehavior ss , scoreanalysis.class c ,scoreanalysis.student s
+    where s.classId=c.classId and s.studentId=ss.studentId
+    and (c.collegeId=#{id,jdbcType=VARCHAR} or c.majorId=#{id,jdbcType=VARCHAR})
+    and ss.year>=2015;
+  </select>
+  <select id="sumStudentBySleeplate" resultType="java.util.LinkedHashMap">
+    select count(*) from (
+    select distinct studentId,sleeplateLabel from scoreanalysis.studentbehavior) ass
+    where sleeplateLabel = #{sleeplateLabel,jdbcType=INTEGER};
+  </select>
+
+  <select id="sumStudentBySleeplateAndYear" resultType="java.lang.Integer">
+    select count(*)
+    from scoreanalysis.studentbehavior as ss ,scoreanalysis.student as s
+    where s.studentId=ss.studentId
+    and ss.year like #{year,jdbcType=VARCHAR}
+    and ss.sleeplateLabel = #{sleeplateLabel,jdbcType=INTEGER};
+  </select>
+  <select id="sumStudentBySleeplateAndYearAndId" resultType="java.lang.Integer">
+    select count(*)
+    from scoreanalysis.studentbehavior as ss , scoreanalysis.class as c ,scoreanalysis.student as s
+    where s.classId=c.classId and s.studentId=ss.studentId
+    and ss.year like #{year,jdbcType=VARCHAR}
+    and ss.sleeplateLabel = #{sleeplateLabel,jdbcType=INTEGER}
+    and (c.collegeId=#{id,jdbcType=VARCHAR} or c.majorId=#{id,jdbcType=VARCHAR});
+  </select>
+
+
+  <select id="getStudentBehaviorDataByStudentId" resultType="bupt.sse.SmartCampus.model.StudentBehavior">
+    select * from scoreanalysis.studentbehavior
+    where studentId=#{studentId,jdbcType=VARCHAR};
+  </select>
 </mapper>

@@ -80,6 +80,22 @@ public interface StudentMapper {
                                            @Param("year") String year,
                                            @Param("rowNum") Integer rowNum,
                                            @Param("pageSize") Integer pageSize);
+    List<Student> getBreakfastStudentDataByPage(@Param("breakfastLabel") Integer breakfastLabel,
+                                             @Param("year") String year,
+                                             @Param("rowNum") Integer rowNum,
+                                             @Param("pageSize") Integer pageSize);
+    List<Student> getConsumptionStudentDataByPage(@Param("consumptionLabel") Integer consumptionLabel,
+                                             @Param("year") String year,
+                                             @Param("rowNum") Integer rowNum,
+                                             @Param("pageSize") Integer pageSize);
+    List<Student> getMealStudentDataByPage(@Param("mealLabel") Integer mealLabel,
+                                             @Param("year") String year,
+                                             @Param("rowNum") Integer rowNum,
+                                             @Param("pageSize") Integer pageSize);
+    List<Student> getSleeplateStudentDataByPage(@Param("sleeplateLabel") Integer sleeplateLabel,
+                                             @Param("year") String year,
+                                             @Param("rowNum") Integer rowNum,
+                                             @Param("pageSize") Integer pageSize);
     List<Student> getGrindStudentDataByPageAndId(@Param("grind") Integer grind,
                                                  @Param("grade") String grade,
                                                  @Param("id") String id,
@@ -91,6 +107,26 @@ public interface StudentMapper {
                                                 @Param("rowNum") Integer rowNum,
                                                 @Param("pageSize") Integer pageSize);
     List<Student> getAscendStudentDataByPageAndId(@Param("ascend") Integer ascend,
+                                                  @Param("year") String year,
+                                                  @Param("id") String id,
+                                                  @Param("rowNum") Integer rowNum,
+                                                  @Param("pageSize") Integer pageSize);
+    List<Student> getBreakfastStudentDataByPageAndId(@Param("breakfastLabel") Integer breakfastLabel,
+                                                  @Param("year") String year,
+                                                  @Param("id") String id,
+                                                  @Param("rowNum") Integer rowNum,
+                                                  @Param("pageSize") Integer pageSize);
+    List<Student> getConsumptionStudentDataByPageAndId(@Param("consumptionLabel") Integer consumptionLabel,
+                                                  @Param("year") String year,
+                                                  @Param("id") String id,
+                                                  @Param("rowNum") Integer rowNum,
+                                                  @Param("pageSize") Integer pageSize);
+    List<Student> getMealStudentDataByPageAndId(@Param("mealLabel") Integer mealLabel,
+                                                  @Param("year") String year,
+                                                  @Param("id") String id,
+                                                  @Param("rowNum") Integer rowNum,
+                                                  @Param("pageSize") Integer pageSize);
+    List<Student> getSleeplateStudentDataByPageAndId(@Param("sleeplateLabel") Integer sleeplateLabel,
                                                   @Param("year") String year,
                                                   @Param("id") String id,
                                                   @Param("rowNum") Integer rowNum,
