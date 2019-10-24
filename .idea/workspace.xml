@@ -6,57 +6,120 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4617262f-5f0e-45cd-a7cf-7f20f9e104d2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/service/StudentBehaviorService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/service/StudentBehaviorServiceImpl.java" afterDir="false" />
+    <list default="true" id="4617262f-5f0e-45cd-a7cf-7f20f9e104d2" name="Default Changelist" comment="学业画像模块功能完整（+studyProfileController）">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/studyProfileCounselor.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/StudyProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/StudyProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/dao/PredictScoreMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/dao/PredictScoreMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/service/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/service/StudentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/service/StudentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/service/StudentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/service/StudentStudyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/service/StudentStudyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/service/StudentStudyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/service/StudentStudyServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/PredictScoreMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/PredictScoreMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/adminMain.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/adminMain.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/studyProfileAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/studyProfileAdmin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/assets/echarts/echarts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/assets/echarts/echarts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/classes/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/classes/bupt/sse/SmartCampus/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/classes/bupt/sse/SmartCampus/controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/classes/bupt/sse/SmartCampus/controller/StudyProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/classes/bupt/sse/SmartCampus/controller/StudyProfileController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/classes/bupt/sse/SmartCampus/dao/ClassMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/classes/bupt/sse/SmartCampus/dao/ClassMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/classes/bupt/sse/SmartCampus/dao/StudentMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/classes/bupt/sse/SmartCampus/dao/StudentMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/classes/bupt/sse/SmartCampus/dao/StudentStudyMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/classes/bupt/sse/SmartCampus/dao/StudentStudyMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/classes/bupt/sse/SmartCampus/interceptor/LoginInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/classes/bupt/sse/SmartCampus/interceptor/LoginInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/classes/bupt/sse/SmartCampus/model/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/classes/bupt/sse/SmartCampus/model/Student.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/classes/bupt/sse/SmartCampus/service/StudentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/classes/bupt/sse/SmartCampus/service/StudentService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/classes/bupt/sse/SmartCampus/service/StudentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/classes/bupt/sse/SmartCampus/service/StudentServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/classes/bupt/sse/SmartCampus/service/StudentStudyService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/classes/bupt/sse/SmartCampus/service/StudentStudyService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/classes/bupt/sse/SmartCampus/service/StudentStudyServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/classes/bupt/sse/SmartCampus/service/StudentStudyServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/classes/mapper/ClassMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/classes/mapper/ClassMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/classes/mapper/StudentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/classes/mapper/StudentMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/classes/mapper/StudentStudyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/classes/mapper/StudentStudyMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/views/adminMain.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/views/adminMain.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SmartCampus/WEB-INF/views/studyProfile.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SmartCampus/static/js/common-scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/SmartCampus/static/js/common-scripts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SmartCampus/static/js/count.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/SmartCampus/static/js/count.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/controller/StudyProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/controller/StudyProfileController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/dao/ClassMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/dao/ClassMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/dao/StudentMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/dao/StudentMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/dao/StudentStudyMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/dao/StudentStudyMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/interceptor/LoginInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/interceptor/LoginInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/Student.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/service/StudentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/service/StudentService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/service/StudentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/service/StudentServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/service/StudentStudyService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/service/StudentStudyService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/service/StudentStudyServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/service/StudentStudyServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ClassMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/ClassMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/StudentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/StudentMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/StudentStudyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/StudentStudyMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartCampus.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/SmartCampus.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/controller/ConsumptionProfileController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/controller/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/controller/ScorePredictController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/controller/StudyProfileController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/dao/AdministratorMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/dao/ClassMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/dao/CollegeAnalysisMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/dao/CollegeCourseMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/dao/CollegeMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/dao/CourseMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/dao/StudentBehaviorMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/dao/StudentCourseMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/dao/StudentMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/dao/StudentStudyMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/dao/UserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/interceptor/LoginInterceptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/Administrator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/AdministratorExample$Criteria.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/AdministratorExample$Criterion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/AdministratorExample$GeneratedCriteria.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/AdministratorExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/Class.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/ClassExample$Criteria.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/ClassExample$Criterion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/ClassExample$GeneratedCriteria.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/ClassExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/College.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CollegeAnalysis.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CollegeAnalysisExample$Criteria.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CollegeAnalysisExample$Criterion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CollegeAnalysisExample$GeneratedCriteria.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CollegeAnalysisExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CollegeAnalysisKey.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CollegeCourse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CollegeCourseExample$Criteria.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CollegeCourseExample$Criterion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CollegeCourseExample$GeneratedCriteria.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CollegeCourseExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CollegeCourseKey.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CollegeExample$Criteria.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CollegeExample$Criterion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CollegeExample$GeneratedCriteria.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CollegeExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CollegeKey.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/Course.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CourseExample$Criteria.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CourseExample$Criterion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CourseExample$GeneratedCriteria.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CourseExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/Student.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/StudentBehavior.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/StudentBehaviorExample$Criteria.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/StudentBehaviorExample$Criterion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/StudentBehaviorExample$GeneratedCriteria.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/StudentBehaviorExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/StudentCourse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/StudentCourseExample$Criteria.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/StudentCourseExample$Criterion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/StudentCourseExample$GeneratedCriteria.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/StudentCourseExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/StudentCourseKey.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/StudentExample$Criteria.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/StudentExample$Criterion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/StudentExample$GeneratedCriteria.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/StudentExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/StudentStudy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/StudentStudyExample$Criteria.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/StudentStudyExample$Criterion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/StudentStudyExample$GeneratedCriteria.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/StudentStudyExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/UserExample$Criteria.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/UserExample$Criterion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/UserExample$GeneratedCriteria.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/UserExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/service/AdministratorService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/service/AdministratorServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/service/CollegeService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/service/CollegeServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/service/StudentCourseService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/service/StudentCourseServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/service/StudentService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/service/StudentServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/service/StudentStudyService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/service/StudentStudyServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/service/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/test/MBGTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/utils/Message.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/utils/PageBean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/utils/RSAUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/utils/VerifyCodeUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/jdbc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/log4j.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/AdministratorMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ClassMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/CollegeAnalysisMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/CollegeCourseMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/CollegeMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/CourseMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/StudentBehaviorMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/StudentCourseMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/StudentMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/StudentStudyMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mybatis-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/rebel.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/springMVC.xml" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -75,19 +138,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/adminMain.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-949">
-              <caret line="87" selection-start-line="87" selection-end-line="87" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/studyProfileAdmin.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="863" column="16" selection-start-line="863" selection-start-column="16" selection-end-line="863" selection-end-column="32" />
+            <state relative-caret-position="581">
+              <caret line="976" column="28" lean-forward="true" selection-start-line="976" selection-start-column="28" selection-end-line="976" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -95,8 +149,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/studyProfileCounselor.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="645" column="32" selection-start-line="645" selection-start-column="32" selection-end-line="645" selection-end-column="32" />
+            <state relative-caret-position="-6105">
+              <caret line="627" column="44" selection-start-line="627" selection-start-column="44" selection-end-line="627" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/StudentMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="311">
+              <caret line="348" column="65" selection-start-line="348" selection-start-column="42" selection-end-line="348" selection-end-column="65" />
             </state>
           </provider>
         </entry>
@@ -131,8 +194,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/StudyProfileController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="109" column="13" lean-forward="true" selection-start-line="109" selection-start-column="13" selection-end-line="109" selection-end-column="13" />
+            <state relative-caret-position="1350">
+              <caret line="109" column="13" selection-start-line="109" selection-start-column="13" selection-end-line="109" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -143,7 +206,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/service/StudentServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2734">
+            <state relative-caret-position="4230">
               <caret line="294" column="44" selection-start-line="294" selection-start-column="44" selection-end-line="294" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -188,12 +251,13 @@
       <find>inline</find>
       <find>shop</find>
       <find>charts</find>
-      <find>render</find>
-      <find>ascendTable</find>
       <find>学霸</find>
       <find>count</find>
       <find>学习困难</find>
       <find>ascend_data</find>
+      <find>render</find>
+      <find>ascendTable</find>
+      <find>re</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -264,7 +328,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="55" />
+    <option name="x" value="54" />
     <option name="y" value="23" />
     <option name="width" value="1386" />
     <option name="height" value="877" />
@@ -313,18 +377,7 @@
               <item name="SmartCampus" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="SmartCampus" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SmartCampus" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SmartCampus" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="SmartCampus" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SmartCampus" type="b2602c69:ProjectViewProjectNode" />
@@ -332,6 +385,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SmartCampus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SmartCampus" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SmartCampus" type="b2602c69:ProjectViewProjectNode" />
@@ -354,6 +415,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane">
         <subPane>
           <expand>
@@ -370,20 +432,19 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1569403232543" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1569405313872" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -662,7 +723,10 @@
       <workItem from="1566688424479" duration="2555000" />
       <workItem from="1566691231798" duration="24394000" />
       <workItem from="1569053672709" duration="5634000" />
-      <workItem from="1569308681427" duration="4308000" />
+      <workItem from="1569308681427" duration="4953000" />
+      <workItem from="1569494092814" duration="783000" />
+      <workItem from="1570790861812" duration="297000" />
+      <workItem from="1571800727497" duration="3634000" />
     </task>
     <task id="LOCAL-00001" summary="初始框架，完成登录功能，userID 20152120442 userPassword 123456&#10;类名用大驼峰 变量用小驼峰&#10;所有jsp放在WEB-INF/views下面&#10;每人分配一个Controller以减少冲突，曹锡鹏ScorePredictController 对应成绩分析功能&#10;来佳洁 StudyProfileController 对应学业画像展示&#10;于瑞杰 ConsumptionProfileController 对应消费画像展示">
       <created>1565278126087</created>
@@ -678,11 +742,18 @@
       <option name="project" value="LOCAL" />
       <updated>1569057195886</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="学业画像模块功能完整（无bug）">
+      <created>1569403307831</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1569403307831</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68316000" />
+    <option name="totallyTimeSpent" value="73675000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -694,9 +765,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="55" y="23" width="1386" height="877" extended-state="0" />
+    <frame x="54" y="23" width="1386" height="877" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4984326" visible="true" weight="0.203125" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4984326" visible="true" weight="0.21205357" />
       <window_info id="Structure" order="1" sideWeight="0.5015674" side_tool="true" weight="0.15496911" />
       <window_info id="Designer" order="2" />
       <window_info id="JRebel" order="3" sideWeight="0.5015674" side_tool="true" weight="0.15496911" />
@@ -710,7 +781,7 @@
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="Find" order="3" />
       <window_info anchor="bottom" id="Run" order="4" sideWeight="0.49859628" weight="0.3264642" />
-      <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.4968017" visible="true" weight="0.3057325" />
+      <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.4968017" weight="0.3057325" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
       <window_info anchor="bottom" id="JRebel Console" order="8" sideWeight="0.5014881" weight="0.39696312" />
@@ -718,7 +789,7 @@
       <window_info anchor="bottom" id="Spring" order="10" sideWeight="0.4991578" weight="0.32924527" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4991578" weight="0.32924527" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.50319827" side_tool="true" weight="0.39804772" />
+      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.50319827" side_tool="true" weight="0.39745224" />
       <window_info anchor="bottom" id="Messages" order="14" sideWeight="0.4991578" weight="0.3253796" />
       <window_info anchor="bottom" id="Java Enterprise" order="15" sideWeight="0.49859628" weight="0.32924527" />
       <window_info anchor="bottom" id="Database Changes" order="16" />
@@ -951,13 +1022,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/StudentMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="341" column="11" selection-start-line="331" selection-start-column="2" selection-end-line="341" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/StudentStudyMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8019">
@@ -1126,6 +1190,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/adminMain.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1305">
+          <caret line="87" selection-start-line="87" selection-end-line="87" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/service/StudentCourseServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -1147,6 +1218,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/StudyProfileController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1350">
+          <caret line="109" column="13" selection-start-line="109" selection-start-column="13" selection-end-line="109" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/service/StudentServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4230">
+          <caret line="294" column="44" selection-start-line="294" selection-start-column="44" selection-end-line="294" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/service/ClassService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1161,44 +1252,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/adminMain.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/StudentMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-949">
-          <caret line="87" selection-start-line="87" selection-end-line="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/controller/StudyProfileController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="109" column="13" lean-forward="true" selection-start-line="109" selection-start-column="13" selection-end-line="109" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/bupt/sse/SmartCampus/service/StudentServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2734">
-          <caret line="294" column="44" selection-start-line="294" selection-start-column="44" selection-end-line="294" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="311">
+          <caret line="348" column="65" selection-start-line="348" selection-start-column="42" selection-end-line="348" selection-end-column="65" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/studyProfileAdmin.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="863" column="16" selection-start-line="863" selection-start-column="16" selection-end-line="863" selection-end-column="32" />
+        <state relative-caret-position="581">
+          <caret line="976" column="28" lean-forward="true" selection-start-line="976" selection-start-column="28" selection-end-line="976" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/studyProfileCounselor.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="645" column="32" selection-start-line="645" selection-start-column="32" selection-end-line="645" selection-end-column="32" />
+        <state relative-caret-position="-6105">
+          <caret line="627" column="44" selection-start-line="627" selection-start-column="44" selection-end-line="627" selection-end-column="44" />
         </state>
       </provider>
     </entry>
