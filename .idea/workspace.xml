@@ -6,121 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4617262f-5f0e-45cd-a7cf-7f20f9e104d2" name="Default Changelist" comment="学业画像模块功能完整（+studyProfileController）">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/studyProfileCounselor.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmartCampus.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/SmartCampus.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/controller/ConsumptionProfileController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/controller/LoginController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/controller/ScorePredictController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/controller/StudyProfileController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/dao/AdministratorMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/dao/ClassMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/dao/CollegeAnalysisMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/dao/CollegeCourseMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/dao/CollegeMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/dao/CourseMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/dao/StudentBehaviorMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/dao/StudentCourseMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/dao/StudentMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/dao/StudentStudyMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/dao/UserMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/interceptor/LoginInterceptor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/Administrator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/AdministratorExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/AdministratorExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/AdministratorExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/AdministratorExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/Class.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/ClassExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/ClassExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/ClassExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/ClassExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/College.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CollegeAnalysis.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CollegeAnalysisExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CollegeAnalysisExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CollegeAnalysisExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CollegeAnalysisExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CollegeAnalysisKey.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CollegeCourse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CollegeCourseExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CollegeCourseExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CollegeCourseExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CollegeCourseExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CollegeCourseKey.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CollegeExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CollegeExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CollegeExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CollegeExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CollegeKey.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/Course.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CourseExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CourseExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CourseExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/CourseExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/Student.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/StudentBehavior.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/StudentBehaviorExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/StudentBehaviorExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/StudentBehaviorExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/StudentBehaviorExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/StudentCourse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/StudentCourseExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/StudentCourseExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/StudentCourseExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/StudentCourseExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/StudentCourseKey.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/StudentExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/StudentExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/StudentExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/StudentExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/StudentStudy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/StudentStudyExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/StudentStudyExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/StudentStudyExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/StudentStudyExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/UserExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/UserExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/UserExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/model/UserExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/service/AdministratorService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/service/AdministratorServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/service/CollegeService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/service/CollegeServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/service/StudentCourseService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/service/StudentCourseServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/service/StudentService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/service/StudentServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/service/StudentStudyService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/service/StudentStudyServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/service/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/service/UserServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/test/MBGTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/utils/Message.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/utils/PageBean.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/utils/RSAUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bupt/sse/SmartCampus/utils/VerifyCodeUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jdbc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/log4j.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/AdministratorMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ClassMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/CollegeAnalysisMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/CollegeCourseMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/CollegeMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/CourseMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/StudentBehaviorMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/StudentCourseMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/StudentMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/StudentStudyMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis-config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/rebel.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/springMVC.xml" beforeDir="false" />
-    </list>
+    <list default="true" id="4617262f-5f0e-45cd-a7cf-7f20f9e104d2" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -726,7 +612,7 @@
       <workItem from="1569308681427" duration="4953000" />
       <workItem from="1569494092814" duration="783000" />
       <workItem from="1570790861812" duration="297000" />
-      <workItem from="1571800727497" duration="3634000" />
+      <workItem from="1571800727497" duration="4052000" />
     </task>
     <task id="LOCAL-00001" summary="初始框架，完成登录功能，userID 20152120442 userPassword 123456&#10;类名用大驼峰 变量用小驼峰&#10;所有jsp放在WEB-INF/views下面&#10;每人分配一个Controller以减少冲突，曹锡鹏ScorePredictController 对应成绩分析功能&#10;来佳洁 StudyProfileController 对应学业画像展示&#10;于瑞杰 ConsumptionProfileController 对应消费画像展示">
       <created>1565278126087</created>
@@ -749,11 +635,18 @@
       <option name="project" value="LOCAL" />
       <updated>1569403307831</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="学业画像模块功能完整（+studyProfileController）">
+      <created>1571876063824</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1571876063825</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73675000" />
+    <option name="totallyTimeSpent" value="74093000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -892,7 +785,8 @@
     <MESSAGE value="初始框架，完成登录功能，userID 20152120442 userPassword 123456&#10;类名用大驼峰 变量用小驼峰&#10;所有jsp放在WEB-INF/views下面&#10;每人分配一个Controller以减少冲突，曹锡鹏ScorePredictController 对应成绩分析功能&#10;来佳洁 StudyProfileController 对应学业画像展示&#10;于瑞杰 ConsumptionProfileController 对应消费画像展示" />
     <MESSAGE value="增加辅导员的登录 账号：20152120441 密码：123456" />
     <MESSAGE value="学业画像模块功能完整（无bug）" />
-    <option name="LAST_COMMIT_MESSAGE" value="学业画像模块功能完整（无bug）" />
+    <MESSAGE value="学业画像模块功能完整（+studyProfileController）" />
+    <option name="LAST_COMMIT_MESSAGE" value="学业画像模块功能完整（+studyProfileController）" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/target/SmartCampus/WEB-INF/views/login.jsp">
