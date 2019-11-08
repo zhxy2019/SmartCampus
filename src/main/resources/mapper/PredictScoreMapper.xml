@@ -99,12 +99,20 @@
   <select id="selectCollegePredictPercentage" resultType="java.lang.Float">
     SELECT round(sum(case when predictScore=1 then 1 else 0 end)/count(*)*100,2) as percentage FROM predictscore ps,student s,class c,college co
     where ps.studentId=s.studentId and s.classId=c.classId and c.collegeId=co.collegeId and c.majorId=co.majorId
-    and s.grade>2014 and co.collegeName=#{collegename};
+    and s.grade>#{currentGrade} and co.collegeName=#{collegename};
   </select>
   <select id="selectPredictPercentage" resultType="java.lang.Float">
     SELECT round(sum(case when predictScore=1 then 1 else 0 end)/count(*)*100,2) as percentage FROM predictscore ps,student s,class c,college co
     where ps.studentId=s.studentId and s.classId=c.classId and c.collegeId=co.collegeId and c.majorId=co.majorId
-    and s.grade>2014;
+    and s.grade>#{currentGrade};
+  </select>
+  <select id="selectPredictPercentageInClasses" resultType="java.lang.Float">
+    SELECT round(sum(case when predictScore=1 then 1 else 0 end)/count(*)*100,2) as percentage FROM predictscore ps,student s,class c,college co
+    where ps.studentId=s.studentId and s.classId=c.classId and c.collegeId=co.collegeId and c.majorId=co.majorId
+    and s.grade>#{currentGrade} and c.classId in
+    <foreach collection="classIdList" item="id" index="index" open="(" close=")" separator=",">
+      #{id}
+    </foreach>
   </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 

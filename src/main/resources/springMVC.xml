@@ -35,5 +35,25 @@
             <mvc:exclude-mapping path="/static/**"/>
             <bean class="bupt.sse.SmartCampus.interceptor.LoginInterceptor"/>
         </mvc:interceptor>
+        <!--权限控制拦截器-->
+        <mvc:interceptor>
+            <!-- counselor权限控制器 -->
+            <mvc:mapping path="/counselor/**"/>
+            <!-- mvc:exclude-mapping是另外一种拦截，它可以在你后来的测试中对某个页面进行不拦截，这样就不用在
+                LoginInterceptor的preHandler方法里面获取不拦截的请求uri地址了(优选) -->
+            <mvc:exclude-mapping path="/static/**"/>
+            <mvc:exclude-mapping path="http://10.108.8.67:7474/db/data/transaction/commit"/>
+            <bean class="bupt.sse.SmartCampus.interceptor.CounselorInterceptor"/>
+        </mvc:interceptor>
+        <!--权限控制拦截器-->
+        <mvc:interceptor>
+            <!-- counselor权限控制器 -->
+            <mvc:mapping path="/admin/**"/>
+            <!-- mvc:exclude-mapping是另外一种拦截，它可以在你后来的测试中对某个页面进行不拦截，这样就不用在
+                LoginInterceptor的preHandler方法里面获取不拦截的请求uri地址了(优选) -->
+            <mvc:exclude-mapping path="/static/**"/>
+            <mvc:exclude-mapping path="http://10.108.8.67:7474/db/data/transaction/commit"/>
+            <bean class="bupt.sse.SmartCampus.interceptor.AdministratorInterceptor"/>
+        </mvc:interceptor>
     </mvc:interceptors>
 </beans>

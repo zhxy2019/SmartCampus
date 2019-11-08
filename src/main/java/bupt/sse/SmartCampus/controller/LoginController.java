@@ -4,11 +4,14 @@ package bupt.sse.SmartCampus.controller;
 import bupt.sse.SmartCampus.model.Administrator;
 import bupt.sse.SmartCampus.model.Counselor;
 import bupt.sse.SmartCampus.model.User;
+import bupt.sse.SmartCampus.model.Class;
 import bupt.sse.SmartCampus.service.AdministratorService;
+import bupt.sse.SmartCampus.service.ClassService;
 import bupt.sse.SmartCampus.service.CounselorService;
 import bupt.sse.SmartCampus.service.UserService;
 import bupt.sse.SmartCampus.utils.Message;
 import bupt.sse.SmartCampus.utils.VerifyCodeUtil;
+import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.apache.commons.io.output.ByteArrayOutputStream;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +26,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -36,6 +41,8 @@ public class LoginController {
     private AdministratorService administratorService;
     @Autowired
     private CounselorService counselorService;
+    @Autowired
+    private ClassService classService;
     //默认首页
     @RequestMapping("/")
     public String index(HttpSession session){
@@ -133,6 +140,17 @@ public class LoginController {
         Counselor counselor= counselorService.getCounselorInfo(user.getUserId());
         JSONObject jsonObject = JSONObject.fromObject(counselor);
         session.setAttribute("counselor", jsonObject);
+        //查询管理员所在班级列表存储到list里
+        //该辅导员管理的班级列表
+        List<Class> classes = classService.getClassListByCounselorId(counselor.getCounselorid());
+        JSONArray jsonArray = JSONArray.fromObject(classes);
+        session.setAttribute("classList", jsonArray);
+        List<String> classIdList = new ArrayList<>();
+        for (int i = 0; i < classes.size(); i++) {
+            classIdList.add(classes.get(i).getClassid());
+        }
+        JSONArray classIdArray=JSONArray.fromObject(classIdList);
+        session.setAttribute("classIdList",classIdArray);
         return "counselorMain";
     }
 //

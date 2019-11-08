@@ -33,4 +33,6 @@ public interface PredictScoreMapper {
     Float selectCollegePredictPercentage(@Param("currentGrade")int currentGrade,@Param("collegename") String collegeName);
 
     Float selectPredictPercentage(@Param("currentGrade")int currentGrade);
+
+    Float selectPredictPercentageInClasses(@Param("currentGrade")int currentGrade, @Param("classIdList")List<String> classIdList);
 }

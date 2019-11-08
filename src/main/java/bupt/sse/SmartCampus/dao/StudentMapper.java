@@ -27,6 +27,8 @@ public interface StudentMapper {
 
     List<Student> selectStudentWithPredictNum(@Param("collegeName") String collegeName,@Param("currentGrade") Integer currentGrade);
 
+    List<Student> selectStudentWithPredictNumInClasses(@Param("currentGrade") Integer currentGrade, @Param("classIdList") List<String> classIdList);
+
     int updateByExampleSelective(@Param("record") Student record, @Param("example") StudentExample example);
 
     int updateByExample(@Param("record") Student record, @Param("example") StudentExample example);

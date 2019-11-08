@@ -5,7 +5,6 @@ import bupt.sse.SmartCampus.dao.StudentMapper;
 import bupt.sse.SmartCampus.dao.StudentStudyMapper;
 import bupt.sse.SmartCampus.model.Student;
 import bupt.sse.SmartCampus.model.StudentExample;
-import org.omg.PortableInterceptor.INACTIVE;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -301,7 +300,7 @@ public class StudentServiceImpl implements StudentService{
         return index;
     }
 
-
+    //cxp-----------------------------------------------------------------------
     @Override
     public long getStudentSumInSchool(int currentGrade) {
         StudentExample studentExample=new StudentExample();
@@ -317,6 +316,27 @@ public class StudentServiceImpl implements StudentService{
         StudentExample.Criteria criteria=studentExample.createCriteria();
         criteria.andGradeGreaterThanOrEqualTo(String.valueOf(currentGrade));
         criteria.andFailEqualTo(value);
+        long num=studentMapper.countByExample(studentExample);
+        return num;
+    }
+
+    @Override
+    public long getStudentSumInSchoolInClasses(int currentGrade, List<String> classIdList) {
+        StudentExample studentExample=new StudentExample();
+        StudentExample.Criteria criteria=studentExample.createCriteria();
+        criteria.andGradeGreaterThanOrEqualTo(String.valueOf(currentGrade));
+        criteria.andClassidIn(classIdList);
+        long num=studentMapper.countByExample(studentExample);
+        return num;
+    }
+
+    @Override
+    public long getStudentSumInSchoolByFailInClasses(int currentGrade, int value, List<String> classIdList) {
+        StudentExample studentExample=new StudentExample();
+        StudentExample.Criteria criteria=studentExample.createCriteria();
+        criteria.andGradeGreaterThanOrEqualTo(String.valueOf(currentGrade));
+        criteria.andFailEqualTo(value);
+        criteria.andClassidIn(classIdList);
         long num=studentMapper.countByExample(studentExample);
         return num;
     }
@@ -348,6 +368,11 @@ public class StudentServiceImpl implements StudentService{
     }
 
     @Override
+    public List<Student> getPredictStudentListInClasses(int currentGrade, List<String> classIdList) {
+        return studentMapper.selectStudentWithPredictNumInClasses(currentGrade,classIdList);
+    }
+
+    @Override
     public Float getCollegePredictPercentage(int currentGrade, String collegeName) {
         Float percentage;
         if(collegeName.equals("")){
@@ -355,6 +380,16 @@ public class StudentServiceImpl implements StudentService{
         }else{
             percentage=predictScoreMapper.selectCollegePredictPercentage(currentGrade,collegeName);
         }
+        if(percentage==null){
+            percentage= Float.valueOf(0);
+        }
+        return percentage;
+    }
+
+    @Override
+    public Float getCollegePredictPercentageInClasses(int currentGrade, List<String> classIdList) {
+        Float percentage;
+        percentage=predictScoreMapper.selectPredictPercentageInClasses(currentGrade,classIdList);
         if(percentage==null){
             percentage= Float.valueOf(0);
         }

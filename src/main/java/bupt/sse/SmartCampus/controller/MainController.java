@@ -9,7 +9,6 @@ import bupt.sse.SmartCampus.service.StudentBehaviorService;
 import bupt.sse.SmartCampus.service.StudentService;
 import bupt.sse.SmartCampus.service.StudentStudyService;
 import bupt.sse.SmartCampus.utils.Message;
-import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import net.sf.json.JSONArray;
@@ -17,6 +16,7 @@ import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import javax.servlet.http.HttpSession;
 import java.util.*;
 
 @Controller
@@ -34,6 +34,8 @@ public class MainController {
         //获取当前年份
         Calendar cal=Calendar.getInstance();
         int year=cal.get(Calendar.YEAR);
+        //TODO测试用
+        year=2016;
         int month=cal.get(Calendar.MONTH);
         int currentGrade=0;
         if(month<7){
@@ -54,6 +56,24 @@ public class MainController {
         long studentNum_fail=studentService.getStudentSumInSchoolByFail(currentGrade,2);
         //查询在校生中有退学风险的人数，标签value为3
         long studentNum_out=studentService.getStudentSumInSchoolByFail(currentGrade,3);
+        result=Message.success().add("studentNum",studentNum).add("studentNum_fail",studentNum_fail).add("studentNum_out",studentNum_out);
+        return result;
+    }
+    //管理员获取所管理班级所有学生统计信息
+    public Message getMenuData_counselor(HttpSession session){
+        Message result= null;
+        int currentGrade=getCurrentGrade();
+        JSONArray jsonArray = (JSONArray) session.getAttribute("classList");
+        List<String> classIdList = new ArrayList<>();
+        for (int i = 0; i < jsonArray.size(); i++) {
+            classIdList.add((String) jsonArray.getJSONObject(i).get("classid"));
+        }
+        //查询在校生人数
+        long studentNum=studentService.getStudentSumInSchoolInClasses(currentGrade,classIdList);
+        //查询在校生中有留级风险人数,标签value为2
+        long studentNum_fail=studentService.getStudentSumInSchoolByFailInClasses(currentGrade,2,classIdList);
+        //查询在校生中有退学风险的人数，标签value为3
+        long studentNum_out=studentService.getStudentSumInSchoolByFailInClasses(currentGrade,3,classIdList);
         result=Message.success().add("studentNum",studentNum).add("studentNum_fail",studentNum_fail).add("studentNum_out",studentNum_out);
         return result;
     }
@@ -79,10 +99,39 @@ public class MainController {
 //        }
         String collegeName=req.get("collegeName");
         int currentGrade=getCurrentGrade();
-        //因为当前只预测了2015级软件学院学生，所以currentGrade暂时设为2014
-        currentGrade=2014;
         PageHelper.offsetPage(Integer.parseInt(startIndex), Integer.parseInt(pageSize));
         List<Student> predictStudentList=studentService.getPredictStudentList(collegeName,currentGrade);
+        PageInfo<Student> pageInfo=new PageInfo<>(predictStudentList);
+        Map<Object,Object> info=new HashMap<>();
+        if(pageInfo!=null){
+            info.put("pageData", pageInfo.getList());
+            info.put("total", pageInfo.getTotal());
+            info.put("draw", draw);
+            result = Message.success().add("info", JSONObject.fromObject(info));
+        }else {
+            result = Message.fail("查询失败，请刷新重试!");
+        }
+        return result;
+    }
+
+    public Message getPredictStudentList_counselor(Map<String, String> req,HttpSession session) {
+        Message result=null;
+        String draw=req.get("draw");
+        String startIndex = req.get("start");
+        String pageSize = req.get("length");
+//        String searchCondition = req.get("search");
+//        if (searchCondition == "") {
+//            searchCondition = null;
+//        }
+        String collegeName=req.get("collegeName");
+        int currentGrade=getCurrentGrade();
+        JSONArray jsonArray = (JSONArray) session.getAttribute("classList");
+        List<String> classIdList = new ArrayList<>();
+        for (int i = 0; i < jsonArray.size(); i++) {
+            classIdList.add((String) jsonArray.getJSONObject(i).get("classid"));
+        }
+        PageHelper.offsetPage(Integer.parseInt(startIndex), Integer.parseInt(pageSize));
+        List<Student> predictStudentList=studentService.getPredictStudentListInClasses(currentGrade,classIdList);
         PageInfo<Student> pageInfo=new PageInfo<>(predictStudentList);
         Map<Object,Object> info=new HashMap<>();
         if(pageInfo!=null){
@@ -192,4 +241,20 @@ public class MainController {
         result=Message.success().add("percentage",percentage);
         return result;
     }
+
+    public Message getAlertPercentage_counselor(HttpSession session) {
+        Message result= null;
+        int currentGrade=getCurrentGrade();
+        JSONArray jsonArray = (JSONArray) session.getAttribute("classList");
+        List<String> classIdList = new ArrayList<>();
+        for (int i = 0; i < jsonArray.size(); i++) {
+            classIdList.add((String) jsonArray.getJSONObject(i).get("classid"));
+        }
+        //获取所管理学生挂科率
+        Float percentage=studentService.getCollegePredictPercentageInClasses(currentGrade,classIdList);
+        result=Message.success().add("percentage",percentage);
+        return result;
+    }
+
+
 }

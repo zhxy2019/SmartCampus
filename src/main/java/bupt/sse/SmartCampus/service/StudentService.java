@@ -36,13 +36,23 @@ public interface StudentService {
     //辅助函数
     Integer getIndex(String label);
 
+    //cxp
     long getStudentSumInSchool(int currentGrade);
 
     long getStudentSumInSchoolByFail(int currentGrade, int value);
+
+    long getStudentSumInSchoolInClasses(int currentGrade,List<String> classIdList);
+
+    long getStudentSumInSchoolByFailInClasses(int currentGrade, int value,List<String> classIdList);
 
     Map<String, List> getCollegeFailPercentage(Integer currentGrade);
 
     List<Student> getPredictStudentList(String collegeName, int currentGrade);
 
+    List<Student> getPredictStudentListInClasses(int currentGrade, List<String> classIdList);
+
     Float getCollegePredictPercentage(int currentGrade, String collegeName);
+
+    Float getCollegePredictPercentageInClasses(int currentGrade, List<String> classIdList);
+
 }

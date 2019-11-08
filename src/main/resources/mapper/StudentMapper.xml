@@ -128,6 +128,19 @@
     group by s.studentId
     order by predictFailNum desc,s.failureNum desc)as sel where predictFailNum>0
   </select>
+  <select id="selectStudentWithPredictNumInClasses" resultMap="BaseResultMapWithPredictInfo">
+    select * from(
+    select
+    s.studentId,s.studentName,s.classId,s.grade,format(s.weightScore,2) as weightScore,s.studentRank,s.failureNum,s.failureCredit,s.grind,s.fail,sum(case when ps.predictScore=1 then 1 else 0 end) as predictFailNum
+    from student s, class c, predictscore ps
+    where s.classId=c.classId and s.studentId=ps.studentId
+     and s.grade>#{currentGrade} and c.classId in
+    <foreach collection="classIdList" item="id" index="index" open="(" close=")" separator=",">
+      #{id}
+    </foreach>
+    group by s.studentId
+    order by predictFailNum desc,s.failureNum desc)as sel where predictFailNum>0
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from student
     where studentId = #{studentid,jdbcType=VARCHAR}
