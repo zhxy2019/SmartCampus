@@ -3,9 +3,10 @@
 
 类名用大驼峰 变量用小驼峰
 所有jsp放在WEB-INF/views下面
-每人分配一个Controller以减少冲突，曹锡鹏ScorePredictController 对应成绩分析功能,包括数据统计图表和标签展示，学生成绩可解释预测
-来佳洁 StudyProfileController 对应学业画像展示,包括数据统计图表和标签展示
-于瑞杰 ConsumptionProfileController 对应消费画像展示,包括数据统计图表和标签展示
+每人分配一个Controller以减少冲突，
+ScorePredictController 对应成绩分析功能,包括数据统计图表和标签展示，学生成绩可解释预测
+StudyProfileController 对应学业画像展示,包括数据统计图表和标签展示
+ConsumptionProfileController 对应消费画像展示,包括数据统计图表和标签展示
 
 学生学业标签如下：
 student表中对应学生总体情况信息
